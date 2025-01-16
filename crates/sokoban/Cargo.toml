@@ -1,0 +1,41 @@
+[package]
+name = "sokoban"
+version = "0.3.2"
+edition = "2021"
+repository = "https://github.com/jarry-xiao/sokoban"
+authors = ["jarry-xiao <jarry.xiao@gmail.com>"]
+description = "Sokoban: compact, efficient data structures packed into contiguous byte arrays"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "sokoban"
+path = "src/lib.rs"
+test = true
+doctest = true
+bench = true
+doc = true
+proc-macro = false
+harness = true
+edition = "2021"
+crate-type = ["lib"]
+required-features = []
+
+[dependencies]
+bytemuck = "1.13.0"
+thiserror = "1.0.38"
+num-derive = "0.3.3"
+num-traits = "0.2.15"
+borsh = { workspace = true, features = ["rc", "derive"] }
+serde = { workspace = true, optional = true, features = ["derive"] }
+serde_arrays = { workspace = true, optional = true }
+schemars = { workspace = true, optional = true }
+sov-modules-api = { workspace = true }
+
+[dev-dependencies]
+rand_distr = "0.4.3"
+itertools = "0.10.3"
+rand = "0.7"
+tokio = { version = "1.8.4", features = ["full"] }
+
+[features]
+native = ["serde", "serde_arrays", "schemars"]

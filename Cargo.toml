@@ -1,0 +1,119 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/aaob-module",
+    "crates/dex",
+    'crates/instruments',
+    "crates/oracle/aggregator",
+    "crates/oracle/lut",
+    "crates/oracle/node",
+    "crates/spicenet-risk",
+    "crates/rollup",
+    "crates/sokoban",
+    "crates/shared",
+    "crates/stf",
+    "crates/time",
+    "crates/dex",
+    "crates/sokoban",
+    "crates/oracle/registry",
+    "crates/benchmarks/sampling",
+    "crates/benchmarks/sys-sampling",
+    "crates/benchmarks/state-metrics",
+    "crates/capsule",
+    "crates/provers/sp1",
+    "crates/benchmarks/spammer",
+]
+
+
+[workspace.package]
+version = "0.3.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = [
+    "Informal Systems <hello@informal.systems>",
+    "Sovereign Labs <info@sovereign.xyz>",
+]
+publish = false
+rust-version = "1.82"
+
+[workspace.lints.rust]
+dead_code = "deny"
+non_ascii_idents = "deny" # Bad for readability and it can also be a security vulnerability
+
+# In case you need inspiration for new lints to add to the list, this is a good
+# reference: <https://github.com/EmbarkStudios/rust-ecosystem/blob/6783ae1573d62f3f5439b8ff9e04bec191ec2eaf/lints.toml>.
+[workspace.lints.clippy]
+debug_assert_with_mut_call = "deny"
+inefficient_to_string = "deny"
+map_flatten = "deny"
+manual_ok_or = "deny"
+doc_link_with_quotes = "deny"
+match_same_arms = "deny"
+semicolon_if_nothing_returned = "deny"
+#map_err_ignore = "warn"
+#doc_markdown = "warn"
+[workspace.dependencies]
+sov-modules-api = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-state = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-accounts = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-nonces = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-nft = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-bank = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-ledger-apis = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-prover-incentives = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-attester-incentives = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-sequencer-registry = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-modules-stf-blueprint = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-modules-rollup-blueprint = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-modules-macros = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-stf-runner = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-db = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-sequencer = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-rollup-interface = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-risc0-adapter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-mock-zkvm = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-first-read-last-write-cache = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-cli = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-mock-da = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-celestia-adapter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-kernels = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-capabilities = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-test-utils = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-value-setter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-chain-state = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-metrics = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-universal-wallet = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-address = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+spicenet-stf = { path = "./crates/stf" }
+axum = { version = "0.7", default-features = false }
+serde = { version = "1.0.192", features = ["derive", "rc"] }
+serde_json = { version = "1.0" }
+serde_arrays = { version = "0.1.0" }
+# sov-sequencer-json-client = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+# sov-ledger-json-client = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+
+sov-sp1-adapter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+const-rollup-config = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-blob-storage = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-rollup-apis = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+sov-paymaster = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "eed8c13d6ed8824829737418bb512e47ea692320" }
+prometheus_exporter = "0.8.5"
+prometheus = { version = "0.13.3", default-features = false }
+sha2 = { version = "0.10.6", default-features = false }
+strum = { version = "0.26.3", features = ["derive"] }
+
+anyhow = "1.0.68"
+clap = { version = "4.4.10", features = ["derive"] }
+async-trait = "0.1.71"
+borsh = { version = "1.5.1", features = ["rc", "bytes"] }
+tracing = { version = "0.1.40", default-features = false }
+tracing-appender = "0.2"
+tokio = { version = "1", features = ["full"] }
+tempfile = "3.5"
+jsonrpsee = { version = "0.24", features = ["jsonrpsee-types"] }
+rand = "0.8"
+thiserror = "1.0.50"
+schemars = { version = "0.8.21", features = ["derive"] }
+lazy_static = "1.5.0"
+
+risc0-build = "1.1"

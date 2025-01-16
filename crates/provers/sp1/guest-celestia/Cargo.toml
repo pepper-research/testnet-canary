@@ -1,0 +1,43 @@
+[package]
+name = "sov-demo-prover-guest-celestia-sp1"
+version = "0.3.0"
+edition = "2021"
+resolver = "2"
+
+[workspace]
+
+[dependencies]
+anyhow = "1.0.86"
+
+sp1-zkvm = { version = "3" }
+spicenet-stf = { path = "../../../stf" }
+
+sov-rollup-interface = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-celestia-adapter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-modules-api = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-modules-stf-blueprint = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-sp1-adapter = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-state = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-mock-zkvm = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+sov-kernels = { git = "ssh://git@github.com/Sovereign-Labs/sovereign-sdk-wip.git", rev = "238779a879f925914c88a89069c88710abb09365" }
+
+[patch.crates-io]
+sha2-v0-10-8 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", package = "sha2", branch = "patch-sha2-v0.10.8" }
+curve25519-dalek = { git = "https://github.com/sp1-patches/curve25519-dalek", branch = "patch-curve25519-v4.1.3" }
+crypto-bigint = { git = "https://github.com/sp1-patches/RustCrypto-bigint", branch = "patch-v0.5.5" }
+
+[profile.dev]
+opt-level = 3
+
+[profile.dev.build-override]
+opt-level = 3
+
+[profile.release]
+debug = 1
+lto = true
+
+[profile.release.build-override]
+opt-level = 3
+
+[features]
+bench = ["sov-celestia-adapter/bench"]

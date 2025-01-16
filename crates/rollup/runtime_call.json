@@ -1,0 +1,3115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RuntimeCall_for_DefaultSpec_for_MockDaSpec_and_MockZkvm_and_MockZkvm_and_Native",
+  "description": "This enum is generated from the underlying Runtime, the variants correspond to call messages from the relevant modules",
+  "oneOf": [
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "accounts"
+      ],
+      "properties": {
+        "accounts": {
+          "$ref": "#/definitions/CallMessage"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "nonces"
+      ],
+      "properties": {
+        "nonces": {
+          "$ref": "#/definitions/NotInstantiable"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "bank"
+      ],
+      "properties": {
+        "bank": {
+          "$ref": "#/definitions/CallMessage2"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "sequencer_registry"
+      ],
+      "properties": {
+        "sequencer_registry": {
+          "$ref": "#/definitions/CallMessage3"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "attester_incentives"
+      ],
+      "properties": {
+        "attester_incentives": {
+          "$ref": "#/definitions/CallMessage4"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "prover_incentives"
+      ],
+      "properties": {
+        "prover_incentives": {
+          "$ref": "#/definitions/CallMessage5"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "chain_state"
+      ],
+      "properties": {
+        "chain_state": {
+          "$ref": "#/definitions/NotInstantiable"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "blob_storage"
+      ],
+      "properties": {
+        "blob_storage": {
+          "$ref": "#/definitions/NotInstantiable"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "paymaster"
+      ],
+      "properties": {
+        "paymaster": {
+          "$ref": "#/definitions/CallMessage6"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "time"
+      ],
+      "properties": {
+        "time": {
+          "$ref": "#/definitions/CallMessage7"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "capsule"
+      ],
+      "properties": {
+        "capsule": {
+          "$ref": "#/definitions/CallMessage8"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "aaob"
+      ],
+      "properties": {
+        "aaob": {
+          "$ref": "#/definitions/CallMessage9"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "risk"
+      ],
+      "properties": {
+        "risk": {
+          "$ref": "#/definitions/CallMessage10"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "description": "Module call message.",
+      "type": "object",
+      "required": [
+        "lut"
+      ],
+      "properties": {
+        "lut": {
+          "$ref": "#/definitions/CallMessage11"
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "AccountTag": {
+      "type": "string",
+      "enum": [
+        "Uninitialized",
+        "MarketProductGroup",
+        "TraderRiskGroup",
+        "TraderPosition",
+        "MarketProductGroupWithCombos",
+        "ComboGroup",
+        "Combo",
+        "RiskProfile",
+        "LockedCollateral"
+      ]
+    },
+    "ActionStatus": {
+      "type": "string",
+      "enum": [
+        "Approved",
+        "NotApproved"
+      ]
+    },
+    "Address": {
+      "description": "Address",
+      "type": "string",
+      "pattern": "^sov1[a-zA-Z0-9]+$"
+    },
+    "AuthorizedSequencers": {
+      "description": "The set of sequencers authorized to use a payer.",
+      "oneOf": [
+        {
+          "description": "All sequencers are authorized to use this payer (according to its policy).",
+          "type": "string",
+          "enum": [
+            "all"
+          ]
+        },
+        {
+          "description": "Only the specified sequencers may use this payer.",
+          "type": "object",
+          "required": [
+            "some"
+          ],
+          "properties": {
+            "some": {
+              "$ref": "#/definitions/SafeVec_20_of_MockAddress"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "BitPair": {
+      "description": "Represents a pair of bits[0s and 1s] Values are stored in the `inner` field of the struct, as a pair of two bits.",
+      "type": "object",
+      "required": [
+        "inner"
+      ],
+      "properties": {
+        "inner": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint128",
+            "minimum": 0.0
+          },
+          "maxItems": 2,
+          "minItems": 2
+        }
+      }
+    },
+    "CallMessage": {
+      "description": "Represents the available call messages for interacting with the sov-accounts module.",
+      "oneOf": [
+        {
+          "description": "Inserts a new credential id for the corresponding Account.",
+          "type": "object",
+          "required": [
+            "insert_credential_id"
+          ],
+          "properties": {
+            "insert_credential_id": {
+              "$ref": "#/definitions/CredentialId"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage10": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "InitializeCovarianceMatrix"
+          ],
+          "properties": {
+            "InitializeCovarianceMatrix": {
+              "type": "object",
+              "required": [
+                "mpg"
+              ],
+              "properties": {
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "InitializeMarkPrices"
+          ],
+          "properties": {
+            "InitializeMarkPrices": {
+              "type": "object",
+              "required": [
+                "is_hardcoded_oracle",
+                "mpg"
+              ],
+              "properties": {
+                "hardcoded_oracle_id": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/Address"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "is_hardcoded_oracle": {
+                  "type": "boolean"
+                },
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "UpdateCovarianceMatrix"
+          ],
+          "properties": {
+            "UpdateCovarianceMatrix": {
+              "type": "object",
+              "required": [
+                "correlations",
+                "mpg",
+                "product_keys",
+                "standard_deviations"
+              ],
+              "properties": {
+                "correlations": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/FastInt"
+                    }
+                  }
+                },
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                },
+                "product_keys": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ProductId"
+                  }
+                },
+                "standard_deviations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/FastInt"
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "UpdateMarkPrices"
+          ],
+          "properties": {
+            "UpdateMarkPrices": {
+              "type": "object",
+              "required": [
+                "mpg",
+                "products_to_update"
+              ],
+              "properties": {
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                },
+                "products_to_update": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/ProductMarkPriceUpdate"
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "CollectMarkPricesGarbage"
+          ],
+          "properties": {
+            "CollectMarkPricesGarbage": {
+              "type": "object",
+              "required": [
+                "max_products_to_examine",
+                "mpg"
+              ],
+              "properties": {
+                "max_products_to_examine": {
+                  "type": "integer",
+                  "format": "uint8",
+                  "minimum": 0.0
+                },
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "RemoveMarketProductIndexFromVarianceCache"
+          ],
+          "properties": {
+            "RemoveMarketProductIndexFromVarianceCache": {
+              "type": "object",
+              "required": [
+                "market_product_index",
+                "mpg",
+                "trg"
+              ],
+              "properties": {
+                "market_product_index": {
+                  "type": "integer",
+                  "format": "uint",
+                  "minimum": 0.0
+                },
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                },
+                "trg": {
+                  "$ref": "#/definitions/TraderRiskGroup"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "DeleteMarkPrices"
+          ],
+          "properties": {
+            "DeleteMarkPrices": {
+              "type": "object",
+              "required": [
+                "mpg"
+              ],
+              "properties": {
+                "mpg": {
+                  "$ref": "#/definitions/MarketProductGroup"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage11": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "MutateAll"
+          ],
+          "properties": {
+            "MutateAll": {
+              "type": "object",
+              "required": [
+                "aggregate_conf_intervals",
+                "prices"
+              ],
+              "properties": {
+                "aggregate_conf_intervals": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint32",
+                    "minimum": 0.0
+                  },
+                  "maxItems": 1,
+                  "minItems": 1
+                },
+                "prices": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Fractional"
+                  },
+                  "maxItems": 1,
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage2": {
+      "description": "This enumeration represents the available call messages for interacting with the sov-bank module.",
+      "oneOf": [
+        {
+          "description": "Creates a new token with the specified name and initial balance.",
+          "type": "object",
+          "required": [
+            "create_token"
+          ],
+          "properties": {
+            "create_token": {
+              "type": "object",
+              "required": [
+                "admins",
+                "initial_balance",
+                "mint_to_address",
+                "token_name"
+              ],
+              "properties": {
+                "admins": {
+                  "description": "Admins list.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/SafeVec_20_of_Address"
+                    }
+                  ]
+                },
+                "initial_balance": {
+                  "description": "The initial balance of the new token.",
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "mint_to_address": {
+                  "description": "The address of the account that the new tokens are minted to.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Address"
+                    }
+                  ]
+                },
+                "token_name": {
+                  "description": "The name of the new token.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/SizedSafeString_for_128"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Transfers a specified amount of tokens to the specified address.",
+          "type": "object",
+          "required": [
+            "transfer"
+          ],
+          "properties": {
+            "transfer": {
+              "type": "object",
+              "required": [
+                "coins",
+                "to"
+              ],
+              "properties": {
+                "coins": {
+                  "description": "The amount of tokens to transfer.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Coins"
+                    }
+                  ]
+                },
+                "to": {
+                  "description": "The address to which the tokens will be transferred.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Address"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Burns a specified amount of tokens.",
+          "type": "object",
+          "required": [
+            "burn"
+          ],
+          "properties": {
+            "burn": {
+              "type": "object",
+              "required": [
+                "coins"
+              ],
+              "properties": {
+                "coins": {
+                  "description": "The amount of tokens to burn.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Coins"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Mints a specified amount of tokens.",
+          "type": "object",
+          "required": [
+            "mint"
+          ],
+          "properties": {
+            "mint": {
+              "type": "object",
+              "required": [
+                "coins",
+                "mint_to_address"
+              ],
+              "properties": {
+                "coins": {
+                  "description": "The amount of tokens to mint.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Coins"
+                    }
+                  ]
+                },
+                "mint_to_address": {
+                  "description": "Address to mint tokens to",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Address"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Freezes a token so that the supply is frozen",
+          "type": "object",
+          "required": [
+            "freeze"
+          ],
+          "properties": {
+            "freeze": {
+              "type": "object",
+              "required": [
+                "token_id"
+              ],
+              "properties": {
+                "token_id": {
+                  "description": "Address of the token to be frozen",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/TokenId"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage3": {
+      "description": "This enumeration represents the available call messages for interacting with the `sov-sequencer-registry` module.",
+      "oneOf": [
+        {
+          "description": "Add a new sequencer to the sequencer registry.",
+          "type": "object",
+          "required": [
+            "register"
+          ],
+          "properties": {
+            "register": {
+              "type": "object",
+              "required": [
+                "amount",
+                "da_address"
+              ],
+              "properties": {
+                "amount": {
+                  "description": "The initial balance of the sequencer.",
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "da_address": {
+                  "description": "The Da address of the sequencer you're registering.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/MockAddress"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Increases the balance of the sequencer, transferring the funds from the sequencer account to the rollup.",
+          "type": "object",
+          "required": [
+            "deposit"
+          ],
+          "properties": {
+            "deposit": {
+              "type": "object",
+              "required": [
+                "amount",
+                "da_address"
+              ],
+              "properties": {
+                "amount": {
+                  "description": "The amount to increase.",
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "da_address": {
+                  "description": "The  Da address of the sequencer.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/MockAddress"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Remove a sequencer from the sequencer registry.",
+          "type": "object",
+          "required": [
+            "exit"
+          ],
+          "properties": {
+            "exit": {
+              "type": "object",
+              "required": [
+                "da_address"
+              ],
+              "properties": {
+                "da_address": {
+                  "description": "The  Da address of the sequencer you're removing.",
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/MockAddress"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage4": {
+      "description": "This enumeration represents the available call messages for interacting with the `AttesterIncentives` module.",
+      "oneOf": [
+        {
+          "description": "Register an attester, the parameter is the bond amount",
+          "type": "object",
+          "required": [
+            "register_attester"
+          ],
+          "properties": {
+            "register_attester": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Start the first phase of the two-phase exit process",
+          "type": "string",
+          "enum": [
+            "begin_exit_attester"
+          ]
+        },
+        {
+          "description": "Finish the two phase exit",
+          "type": "string",
+          "enum": [
+            "exit_attester"
+          ]
+        },
+        {
+          "description": "Register a challenger, the parameter is the bond amount",
+          "type": "object",
+          "required": [
+            "register_challenger"
+          ],
+          "properties": {
+            "register_challenger": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Exit a challenger",
+          "type": "string",
+          "enum": [
+            "exit_challenger"
+          ]
+        },
+        {
+          "description": "Increases the balance of the attester.",
+          "type": "object",
+          "required": [
+            "deposit_attester"
+          ],
+          "properties": {
+            "deposit_attester": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage5": {
+      "description": "This enumeration represents the available call messages for interacting with the `ExampleModule` module.",
+      "oneOf": [
+        {
+          "description": "Add a new prover as a bonded prover.",
+          "type": "object",
+          "required": [
+            "register"
+          ],
+          "properties": {
+            "register": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Increases the balance of the prover, transferring the funds from the prover account to the rollup.",
+          "type": "object",
+          "required": [
+            "deposit"
+          ],
+          "properties": {
+            "deposit": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Unbonds the prover.",
+          "type": "string",
+          "enum": [
+            "exit"
+          ]
+        }
+      ]
+    },
+    "CallMessage6": {
+      "description": "Call messages for interacting with the `Paymaster` module.\n\n## Note: These call messages are highly unusual in that they have different effects based on the address of the sequencer who places them on chain. See the docs on individual variants for more information.",
+      "oneOf": [
+        {
+          "description": "Register a new payer with the given policy. If the sequencer who places this message on chain is present in the list of `authorized_sequencers` to use the payer, the payer address for that sequencer is set to the address of the newly registered payer.",
+          "type": "object",
+          "required": [
+            "register_paymaster"
+          ],
+          "properties": {
+            "register_paymaster": {
+              "type": "object",
+              "required": [
+                "policy"
+              ],
+              "properties": {
+                "policy": {
+                  "$ref": "#/definitions/PaymasterPolicy"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Set the payer address for the sequencer to the given address. This call message is highly unusual in that it executes regardless of the sender address on the rollup. Sequencers who do not wish to update their payer address should not sequence transactions containing this callmessage.",
+          "type": "object",
+          "required": [
+            "set_payer_for_sequencer"
+          ],
+          "properties": {
+            "set_payer_for_sequencer": {
+              "type": "object",
+              "required": [
+                "payer"
+              ],
+              "properties": {
+                "payer": {
+                  "$ref": "#/definitions/Address"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Update the policy for a given payer. If the sequencer who places this message on chain is present in the list of `authorized_sequencers` to use the payer after the update, the payer address for that sequencer is set to the address of the newly registered paymaster.",
+          "type": "object",
+          "required": [
+            "update_policy"
+          ],
+          "properties": {
+            "update_policy": {
+              "type": "object",
+              "required": [
+                "payer",
+                "update"
+              ],
+              "properties": {
+                "payer": {
+                  "$ref": "#/definitions/Address"
+                },
+                "update": {
+                  "$ref": "#/definitions/CallMessage6"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage7": {
+      "description": "Transactions handled by the Time module, currently only update.",
+      "oneOf": [
+        {
+          "description": "Update the slot",
+          "type": "object",
+          "required": [
+            "UpdateSlot"
+          ],
+          "properties": {
+            "UpdateSlot": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "Update the timestamp",
+          "type": "object",
+          "required": [
+            "UpdateTimestamp"
+          ],
+          "properties": {
+            "UpdateTimestamp": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage8": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "CreateWallet"
+          ],
+          "properties": {
+            "CreateWallet": {
+              "type": "object",
+              "required": [
+                "nonce",
+                "signature",
+                "wallet_type"
+              ],
+              "properties": {
+                "nonce": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "signature": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  }
+                },
+                "wallet_type": {
+                  "$ref": "#/definitions/WalletType"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "AddAdminWallet"
+          ],
+          "properties": {
+            "AddAdminWallet": {
+              "type": "object",
+              "required": [
+                "address",
+                "admin_wallet",
+                "approving_wallet",
+                "nonce",
+                "signature"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "admin_wallet": {
+                  "$ref": "#/definitions/WalletType"
+                },
+                "approving_wallet": {
+                  "$ref": "#/definitions/Wallet"
+                },
+                "nonce": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "signature": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "AddEphemeralWallet"
+          ],
+          "properties": {
+            "AddEphemeralWallet": {
+              "type": "object",
+              "required": [
+                "address",
+                "approving_wallet",
+                "ephemeral_wallet",
+                "expiration_timestamp",
+                "nonce",
+                "scopes",
+                "signature"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "approving_wallet": {
+                  "$ref": "#/definitions/Wallet"
+                },
+                "ephemeral_wallet": {
+                  "$ref": "#/definitions/WalletType"
+                },
+                "expiration_timestamp": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "nonce": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "scopes": {
+                  "$ref": "#/definitions/ScopeVec"
+                },
+                "signature": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "AddRecoveryWallet"
+          ],
+          "properties": {
+            "AddRecoveryWallet": {
+              "type": "object",
+              "required": [
+                "address",
+                "approving_wallet",
+                "nonce",
+                "recovery_wallet",
+                "signature"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "approving_wallet": {
+                  "$ref": "#/definitions/Wallet"
+                },
+                "nonce": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "recovery_wallet": {
+                  "$ref": "#/definitions/WalletType"
+                },
+                "signature": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "RevokeWallet"
+          ],
+          "properties": {
+            "RevokeWallet": {
+              "type": "object",
+              "required": [
+                "address",
+                "approving_wallet",
+                "nonce",
+                "signature",
+                "wallet_type"
+              ],
+              "properties": {
+                "address": {
+                  "$ref": "#/definitions/Address"
+                },
+                "approving_wallet": {
+                  "$ref": "#/definitions/Wallet"
+                },
+                "nonce": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "signature": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  }
+                },
+                "wallet_type": {
+                  "$ref": "#/definitions/WalletType"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CallMessage9": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "CreateOrder"
+          ],
+          "properties": {
+            "CreateOrder": {
+              "type": "object",
+              "required": [
+                "limit_price",
+                "market_id",
+                "match_limit",
+                "max_base_qty",
+                "max_quote_qty",
+                "post_allowed",
+                "post_only",
+                "self_trade_behavior",
+                "side",
+                "trg_id"
+              ],
+              "properties": {
+                "limit_price": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "market_id": {
+                  "$ref": "#/definitions/MarketId"
+                },
+                "match_limit": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "max_base_qty": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "max_quote_qty": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "post_allowed": {
+                  "type": "boolean"
+                },
+                "post_only": {
+                  "type": "boolean"
+                },
+                "self_trade_behavior": {
+                  "$ref": "#/definitions/SelfTradeHandler"
+                },
+                "side": {
+                  "$ref": "#/definitions/Side"
+                },
+                "trg_id": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "CancelOrder"
+          ],
+          "properties": {
+            "CancelOrder": {
+              "type": "object",
+              "required": [
+                "market_id",
+                "order_id",
+                "side"
+              ],
+              "properties": {
+                "market_id": {
+                  "$ref": "#/definitions/MarketId"
+                },
+                "order_id": {
+                  "type": "integer",
+                  "format": "uint128",
+                  "minimum": 0.0
+                },
+                "side": {
+                  "$ref": "#/definitions/Side"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "CreateMarket"
+          ],
+          "properties": {
+            "CreateMarket": {
+              "type": "object",
+              "required": [
+                "fee_budget",
+                "market_name",
+                "min_base_size",
+                "tick_size"
+              ],
+              "properties": {
+                "fee_budget": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "market_name": {
+                  "$ref": "#/definitions/SizedSafeString_for_128"
+                },
+                "min_base_size": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "tick_size": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "CloseMarket"
+          ],
+          "properties": {
+            "CloseMarket": {
+              "type": "object",
+              "required": [
+                "market_name"
+              ],
+              "properties": {
+                "market_name": {
+                  "$ref": "#/definitions/SizedSafeString_for_128"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Coins": {
+      "description": "Structure that stores information specifying a given `amount` (type [`Amount`]) of coins stored at a `token_id` (type [`crate::TokenId`]).",
+      "type": "object",
+      "required": [
+        "amount",
+        "token_id"
+      ],
+      "properties": {
+        "amount": {
+          "description": "The number of tokens",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "token_id": {
+          "description": "The ID of the token",
+          "allOf": [
+            {
+              "$ref": "#/definitions/TokenId"
+            }
+          ]
+        }
+      }
+    },
+    "ComboLeg": {
+      "type": "object",
+      "required": [
+        "product_index",
+        "product_key",
+        "ratio"
+      ],
+      "properties": {
+        "product_index": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "product_key": {
+          "$ref": "#/definitions/ProductId"
+        },
+        "ratio": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "ComboProduct": {
+      "type": "object",
+      "required": [
+        "legs_array",
+        "metadata",
+        "num_legs"
+      ],
+      "properties": {
+        "legs_array": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ComboLeg"
+          },
+          "maxItems": 4,
+          "minItems": 4
+        },
+        "metadata": {
+          "$ref": "#/definitions/ProductMetadata"
+        },
+        "num_legs": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        }
+      }
+    },
+    "CredentialId": {
+      "description": "32 bytes in hexadecimal format, with `0x` prefix.",
+      "type": "string",
+      "pattern": "^0x[a-fA-F0-9]{64}$"
+    },
+    "CritbitNode": {
+      "type": "object",
+      "required": [
+        "_padding",
+        "key",
+        "prefix_len"
+      ],
+      "properties": {
+        "_padding": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "key": {
+          "type": "integer",
+          "format": "uint128",
+          "minimum": 0.0
+        },
+        "prefix_len": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "Critbit_for_Order_and_2000_and_1000": {
+      "type": "object",
+      "required": [
+        "_padding0",
+        "_padding1",
+        "leaves",
+        "node_allocator",
+        "root"
+      ],
+      "properties": {
+        "_padding0": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "_padding1": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "leaves": {
+          "description": "Allocator corresponding to the leaves of the critbit. Note that this requires 4 registers per leaf to support proper alignment (for aarch64)",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NodeAllocator_spicenet_aaob::tree::Order_1000_4"
+            }
+          ]
+        },
+        "node_allocator": {
+          "description": "Allocator corresponding to inner nodes and leaf pointers of the critbit",
+          "allOf": [
+            {
+              "$ref": "#/definitions/NodeAllocator_sokoban::critbit::CritbitNode_2000_4"
+            }
+          ]
+        },
+        "root": {
+          "description": "Root node of the critbit tree",
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "FastInt": {
+      "type": "object",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int128"
+        }
+      }
+    },
+    "Fractional": {
+      "type": "object",
+      "required": [
+        "exp",
+        "m"
+      ],
+      "properties": {
+        "exp": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "m": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "GasPrice(2)": {
+      "description": "GasPrice is an array of u64 of size 2",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "GasUnit(2)": {
+      "description": "GasUnit is an array of u64 of size 2",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "HealthOutput": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "Healthy"
+          ],
+          "properties": {
+            "Healthy": {
+              "type": "object",
+              "required": [
+                "health_status"
+              ],
+              "properties": {
+                "health_status": {
+                  "$ref": "#/definitions/HealthTracker"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Liquidatable"
+          ],
+          "properties": {
+            "Liquidatable": {
+              "type": "object",
+              "required": [
+                "liquidation_status"
+              ],
+              "properties": {
+                "liquidation_status": {
+                  "$ref": "#/definitions/LiquidationStatus"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "HealthStatus": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Healthy",
+            "NotLiquidatable"
+          ]
+        },
+        {
+          "description": "If true, allows for all open orders to be cancelled BUT doesn't allow for positions to be transferred(liquidated)",
+          "type": "string",
+          "enum": [
+            "Unhealthy"
+          ]
+        },
+        {
+          "description": "If true, allows for all open orders to be cancelled AND allows for position to be transferred AND any new post only orders are blocked.",
+          "type": "string",
+          "enum": [
+            "Liquidatable"
+          ]
+        }
+      ]
+    },
+    "HealthTracker": {
+      "type": "object",
+      "required": [
+        "action_status",
+        "health_status"
+      ],
+      "properties": {
+        "action_status": {
+          "$ref": "#/definitions/ActionStatus"
+        },
+        "health_status": {
+          "$ref": "#/definitions/HealthStatus"
+        }
+      }
+    },
+    "LiquidationStatus": {
+      "type": "object",
+      "required": [
+        "action_result",
+        "health_status",
+        "liquidation_price",
+        "social_losses",
+        "total_social_loss"
+      ],
+      "properties": {
+        "action_result": {
+          "$ref": "#/definitions/ActionStatus"
+        },
+        "health_status": {
+          "$ref": "#/definitions/HealthStatus"
+        },
+        "liquidation_price": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "social_losses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SocialLossInfo"
+          }
+        },
+        "total_social_loss": {
+          "$ref": "#/definitions/Fractional"
+        }
+      }
+    },
+    "LockedCollateral": {
+      "type": "object",
+      "required": [
+        "ask_qty",
+        "bid_qty",
+        "tag"
+      ],
+      "properties": {
+        "ask_qty": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "bid_qty": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "tag": {
+          "$ref": "#/definitions/AccountTag"
+        }
+      }
+    },
+    "MPGId": {
+      "description": "A globally unique identifier.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      },
+      "maxItems": 32,
+      "minItems": 32
+    },
+    "MPGType": {
+      "type": "string",
+      "enum": [
+        "Uninitialized",
+        "MPG",
+        "MPGWithCombos"
+      ]
+    },
+    "MarketId": {
+      "description": "A globally unique identifier.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      },
+      "maxItems": 32,
+      "minItems": 32
+    },
+    "MarketProductGroup": {
+      "type": "object",
+      "required": [
+        "active_flags_products",
+        "active_products",
+        "collected_fees",
+        "decimals",
+        "ewma_windows",
+        "fee_model_module_id",
+        "id",
+        "in_admin_mode",
+        "is_mpg_killed",
+        "max_maker_fee_bps",
+        "max_taker_fee_bps",
+        "min_maker_fee_bps",
+        "min_taker_fee_bps",
+        "mpg_authority",
+        "mpg_type",
+        "name",
+        "risk_engine_module_id",
+        "risk_output_register",
+        "sequence_number"
+      ],
+      "properties": {
+        "active_flags_products": {
+          "$ref": "#/definitions/BitPair"
+        },
+        "active_products": {
+          "description": "Num active products",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProductsArray"
+            }
+          ]
+        },
+        "collected_fees": {
+          "description": "Collected fees till date. This means that each MPG has a separate fee collector authority.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "decimals": {
+          "description": "Standard market decimals for products in MPG.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "ewma_windows": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 0.0
+          },
+          "maxItems": 4,
+          "minItems": 4
+        },
+        "fee_model_module_id": {
+          "$ref": "#/definitions/ModuleId"
+        },
+        "id": {
+          "$ref": "#/definitions/MPGId"
+        },
+        "in_admin_mode": {
+          "description": "If set to `true`, the MPG is controlled by a central admin authority.",
+          "type": "boolean"
+        },
+        "is_mpg_killed": {
+          "description": "If set to `true`, the MPG is considered to be dysfunctional.",
+          "type": "boolean"
+        },
+        "max_maker_fee_bps": {
+          "description": "Maximum fees(in BPS) that can be charged from makers.",
+          "type": "integer",
+          "format": "int16"
+        },
+        "max_taker_fee_bps": {
+          "description": "Maximum fees(in BPS) that can be charged from takers.",
+          "type": "integer",
+          "format": "int16"
+        },
+        "min_maker_fee_bps": {
+          "description": "Minimum fees(in BPS) that can be charged from makers.",
+          "type": "integer",
+          "format": "int16"
+        },
+        "min_taker_fee_bps": {
+          "description": "Minimum fees(in BPS) that can be charged from takers.",
+          "type": "integer",
+          "format": "int16"
+        },
+        "mpg_authority": {
+          "$ref": "#/definitions/MpgAuthority"
+        },
+        "mpg_type": {
+          "description": "MPG Type",
+          "allOf": [
+            {
+              "$ref": "#/definitions/MPGType"
+            }
+          ]
+        },
+        "name": {
+          "description": "Name of the Market Product Group.",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint8",
+            "minimum": 0.0
+          },
+          "maxItems": 16,
+          "minItems": 16
+        },
+        "risk_engine_module_id": {
+          "$ref": "#/definitions/ModuleId"
+        },
+        "risk_output_register": {
+          "description": "Fee model configuration for the MPG. Output register/log for risk engine statuses",
+          "allOf": [
+            {
+              "$ref": "#/definitions/RiskEngineOutput"
+            }
+          ]
+        },
+        "sequence_number": {
+          "type": "integer",
+          "format": "uint128",
+          "minimum": 0.0
+        }
+      }
+    },
+    "MockAddress": {
+      "description": "Mock address; 32 bytes in hex-encoded format",
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "ModuleId": {
+      "description": "A globally unique identifier.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      },
+      "maxItems": 32,
+      "minItems": 32
+    },
+    "MpgAuthority": {
+      "$ref": "#/definitions/Address"
+    },
+    "NodeAllocator_sokoban::critbit::CritbitNode_2000_4": {
+      "type": "object",
+      "required": [
+        "bump_index",
+        "free_list_head",
+        "nodes",
+        "size"
+      ],
+      "properties": {
+        "bump_index": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "free_list_head": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Node_sokoban::critbit::CritbitNode_4"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "NodeAllocator_spicenet_aaob::tree::Order_1000_4": {
+      "type": "object",
+      "required": [
+        "bump_index",
+        "free_list_head",
+        "nodes",
+        "size"
+      ],
+      "properties": {
+        "bump_index": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "free_list_head": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Node_spicenet_aaob::tree::Order_4"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "Node_sokoban::critbit::CritbitNode_4": {
+      "type": "object",
+      "required": [
+        "registers",
+        "value"
+      ],
+      "properties": {
+        "registers": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint32",
+            "minimum": 0.0
+          }
+        },
+        "value": {
+          "$ref": "#/definitions/CritbitNode"
+        }
+      }
+    },
+    "Node_spicenet_aaob::tree::Order_4": {
+      "type": "object",
+      "required": [
+        "registers",
+        "value"
+      ],
+      "properties": {
+        "registers": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint32",
+            "minimum": 0.0
+          }
+        },
+        "value": {
+          "$ref": "#/definitions/Order"
+        }
+      }
+    },
+    "NotInstantiable": {
+      "description": "We may use [`NotInstantiable`] type for modules that do not support calls.\n\n## Details This is a simple struct that implements all the necessary call message traits and that can be used as a placeholder for modules that do not support calls.",
+      "type": "string",
+      "enum": []
+    },
+    "OpenOrders": {
+      "type": "object",
+      "required": [
+        "free_list_head",
+        "max_open_orders",
+        "orders",
+        "products",
+        "total_open_orders"
+      ],
+      "properties": {
+        "free_list_head": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "max_open_orders": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "orders": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/OpenOrdersNode"
+            }
+          ],
+          "maxLength": 100,
+          "minLength": 100,
+          "maxItems": 100,
+          "minItems": 100
+        },
+        "products": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/OpenOrdersMetadata"
+            }
+          ],
+          "maxLength": 256,
+          "minLength": 256,
+          "maxItems": 256,
+          "minItems": 256
+        },
+        "total_open_orders": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        }
+      }
+    },
+    "OpenOrdersMetadata": {
+      "type": "object",
+      "required": [
+        "ask_qty_in_book",
+        "bid_qty_in_book",
+        "head_index",
+        "num_open_orders"
+      ],
+      "properties": {
+        "ask_qty_in_book": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bid_qty_in_book": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "head_index": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "num_open_orders": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        }
+      }
+    },
+    "OpenOrdersNode": {
+      "type": "object",
+      "required": [
+        "client_id",
+        "id",
+        "next",
+        "prev",
+        "qty"
+      ],
+      "properties": {
+        "client_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "id": {
+          "type": "integer",
+          "format": "uint128",
+          "minimum": 0.0
+        },
+        "next": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "prev": {
+          "type": "integer",
+          "format": "uint16",
+          "minimum": 0.0
+        },
+        "qty": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "Order": {
+      "type": "object",
+      "required": [
+        "base_qty",
+        "order_id",
+        "price",
+        "trg_id"
+      ],
+      "properties": {
+        "base_qty": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "order_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "price": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "trg_id": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "OutrightProduct": {
+      "type": "object",
+      "required": [
+        "cumulative_funding_per_share",
+        "cumulative_social_loss_per_share",
+        "dust",
+        "mark_price_max_qualifying_width",
+        "mark_price_qualifying_cum_value",
+        "metadata",
+        "num_tracking_risk_states",
+        "open_long_interest",
+        "open_short_interest",
+        "padding",
+        "product_status"
+      ],
+      "properties": {
+        "cumulative_funding_per_share": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "cumulative_social_loss_per_share": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "dust": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "mark_price_max_qualifying_width": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "mark_price_qualifying_cum_value": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "metadata": {
+          "description": "The associated metadata of the outright product.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProductMetadata"
+            }
+          ]
+        },
+        "num_tracking_risk_states": {
+          "description": "The number of risk states, i.e. parameters tracking open positions in this outright product. At 0, this means that no risk state is tracking positions(outstanding risk) in this outright product, which likely means that there are no positions present in the outright product.",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "open_long_interest": {
+          "description": "Open long positions opened on the exchange represented in notional value.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "open_short_interest": {
+          "description": "Open short positions opened on the exchange represented in notional value.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "padding": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 0.0
+          },
+          "maxItems": 10,
+          "minItems": 10
+        },
+        "product_status": {
+          "description": "The status of the product.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProductStatus"
+            }
+          ]
+        }
+      }
+    },
+    "PayeePolicy": {
+      "description": "The policy that the paymaster applies to a particular rollup user.",
+      "oneOf": [
+        {
+          "description": "The paymaster pays the fees for a particular sender when the policy allows it... - If the policy specifies a `max_fee`, the transaction's max fee must be less than or equal to that value - if the policy specifies a `max_gas_price`, the current gas price must be less than or equal to that value - If the policy specifies a gas limit, the transaction must also specify a limit *and* that limit must be less than or equal to `gas_limit`.\n\nIn all other cases, the sender pays their own fees.",
+          "type": "object",
+          "required": [
+            "allow"
+          ],
+          "properties": {
+            "allow": {
+              "type": "object",
+              "properties": {
+                "gas_limit": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/GasUnit(2)"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "max_fee": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "max_gas_price": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/GasPrice(2)"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "The payer does not pay fees for any transaction using this policy.",
+          "type": "string",
+          "enum": [
+            "deny"
+          ]
+        }
+      ]
+    },
+    "PaymasterPolicy": {
+      "description": "The complete policy for a paymaster. This includes... - The set of sequencers that can use the paymaster - The set of users authorized to update this policy - A default policy for accepting/rejecting gas requests - Specific policies for accepting/rejecting gas requests from particular users",
+      "type": "object",
+      "required": [
+        "authorized_sequencers",
+        "authorized_updaters",
+        "default_payee_policy",
+        "payees"
+      ],
+      "properties": {
+        "authorized_sequencers": {
+          "description": "Sequencers who are authorized to use this payer.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/AuthorizedSequencers"
+            }
+          ]
+        },
+        "authorized_updaters": {
+          "description": "Users who are authorized to update this policy.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SafeVec_20_of_Address"
+            }
+          ]
+        },
+        "default_payee_policy": {
+          "description": "Default payee policy for users that are not in the balances map.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PayeePolicy"
+            }
+          ]
+        },
+        "payees": {
+          "description": "A mapping from user address to the policy for that user.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/SafeVec_20_of_Tuple_of_Address_and_PayeePolicy"
+            }
+          ]
+        }
+      }
+    },
+    "PriceEwma": {
+      "type": "object",
+      "required": [
+        "ask",
+        "bid",
+        "ewma_ask",
+        "ewma_bid",
+        "prev_ask",
+        "prev_bid",
+        "slot"
+      ],
+      "properties": {
+        "ask": {
+          "description": "The current best ask",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "bid": {
+          "description": "The current best bid",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "ewma_ask": {
+          "description": "Exponentially-Weighted Moving Average(EWMA) of the Ask",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fractional"
+          },
+          "maxItems": 4,
+          "minItems": 4
+        },
+        "ewma_bid": {
+          "description": "Exponentially-Weighted Moving Average(EWMA) of the Bid",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fractional"
+          },
+          "maxItems": 4,
+          "minItems": 4
+        },
+        "prev_ask": {
+          "description": "The best ask of the last slot",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "prev_bid": {
+          "description": "The best bid of the last slot",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "slot": {
+          "description": "The slot at which [`PriceEwma`] was last updated",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "Product": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "Outright"
+          ],
+          "properties": {
+            "Outright": {
+              "type": "object",
+              "required": [
+                "outright_product"
+              ],
+              "properties": {
+                "outright_product": {
+                  "$ref": "#/definitions/OutrightProduct"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Combo"
+          ],
+          "properties": {
+            "Combo": {
+              "type": "object",
+              "required": [
+                "combo_product"
+              ],
+              "properties": {
+                "combo_product": {
+                  "$ref": "#/definitions/ComboProduct"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ProductId": {
+      "description": "A globally unique identifier.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      },
+      "maxItems": 32,
+      "minItems": 32
+    },
+    "ProductMarkPriceUpdate": {
+      "type": "object",
+      "required": [
+        "asks",
+        "bids",
+        "product_id"
+      ],
+      "properties": {
+        "asks": {
+          "$ref": "#/definitions/Slab"
+        },
+        "bids": {
+          "$ref": "#/definitions/Slab"
+        },
+        "product_id": {
+          "$ref": "#/definitions/ProductId"
+        }
+      }
+    },
+    "ProductMetadata": {
+      "type": "object",
+      "required": [
+        "base_decimals",
+        "name",
+        "notional_traded_volume",
+        "orderbook_id",
+        "price_index",
+        "price_offset",
+        "prices",
+        "product_id",
+        "tick_size"
+      ],
+      "properties": {
+        "base_decimals": {
+          "description": "Base decimals of a product defined at initialization.",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "name": {
+          "description": "Name of the product represented where each character is represented by a `u8` type with `NAME_LEN` number of characters per product.",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint8",
+            "minimum": 0.0
+          },
+          "maxItems": 16,
+          "minItems": 16
+        },
+        "notional_traded_volume": {
+          "description": "Total volume traded in notional terms",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "orderbook_id": {
+          "description": "Orderbook id represented as a u64",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "price_index": {
+          "description": "Price index",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "price_offset": {
+          "description": "TODO",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "prices": {
+          "description": "Set of important prices of the product, such as the EWMA bid, EWMA ask and so on.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PriceEwma"
+            }
+          ]
+        },
+        "product_id": {
+          "description": "Product ID",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ProductId"
+            }
+          ]
+        },
+        "tick_size": {
+          "description": "The tick size of a product defined at initialization.",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        }
+      }
+    },
+    "ProductStatus": {
+      "type": "string",
+      "enum": [
+        "Uninitialized",
+        "Initialized",
+        "Expired",
+        "Expiring"
+      ]
+    },
+    "ProductsArray": {
+      "type": "object",
+      "required": [
+        "array"
+      ],
+      "properties": {
+        "array": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Product"
+          }
+        }
+      }
+    },
+    "RiskEngineOutput": {
+      "type": "object",
+      "required": [
+        "health_output"
+      ],
+      "properties": {
+        "health_output": {
+          "$ref": "#/definitions/HealthOutput"
+        }
+      }
+    },
+    "Role": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Admin",
+            "Recovery"
+          ]
+        },
+        {
+          "type": "object",
+          "required": [
+            "Ephemeral"
+          ],
+          "properties": {
+            "Ephemeral": {
+              "type": "object",
+              "required": [
+                "expiration_timestamp",
+                "scopes"
+              ],
+              "properties": {
+                "expiration_timestamp": {
+                  "type": "integer",
+                  "format": "uint64",
+                  "minimum": 0.0
+                },
+                "scopes": {
+                  "$ref": "#/definitions/ScopeVec"
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "SafeVec_20_of_Address": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Address"
+      },
+      "maxItems": 20,
+      "minItems": 0
+    },
+    "SafeVec_20_of_MockAddress": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/MockAddress"
+      },
+      "maxItems": 20,
+      "minItems": 0
+    },
+    "SafeVec_20_of_Tuple_of_Address_and_PayeePolicy": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": [
+          {
+            "$ref": "#/definitions/Address"
+          },
+          {
+            "$ref": "#/definitions/PayeePolicy"
+          }
+        ],
+        "maxItems": 2,
+        "minItems": 2
+      },
+      "maxItems": 20,
+      "minItems": 0
+    },
+    "Scope": {
+      "type": "string",
+      "enum": [
+        "Trading",
+        "Funds"
+      ]
+    },
+    "ScopeVec": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Scope"
+      }
+    },
+    "SelfTradeHandler": {
+      "oneOf": [
+        {
+          "description": "The orders are matched together",
+          "type": "string",
+          "enum": [
+            "DecrementTake"
+          ]
+        },
+        {
+          "description": "the order on the maker side is cancelled. matching for the taker order continues and essentially bypasses the self-maker order",
+          "type": "string",
+          "enum": [
+            "CancelProvide"
+          ]
+        },
+        {
+          "description": "the entire transaction(taker side) fails with a program error",
+          "type": "string",
+          "enum": [
+            "AbortTx"
+          ]
+        }
+      ]
+    },
+    "Side": {
+      "type": "string",
+      "enum": [
+        "Bid",
+        "Ask"
+      ]
+    },
+    "SizedSafeString_for_128": {
+      "description": "A String wrapper which enforces certain constraints to ensure it is safely displayable as part of a transaction without confusing the user. Only printable ASCII is allowed, and the length is limited.\n\n`SchemaGenerator` implementation is forbidden on `std::String` by default, to avoid the possibility of untrusted input supplying highly confusing text that tricks users into misunderstanding the transaction they are signing. `SafeString` enforces some constraints to mitigate this risk. If you need to encode a large data blob such as a hex string, use a `Vec<u8>` with the `[sov_wallet(display = \"hex\")]` attribute (or any of the other display styles). Avoid raw `String`s if possible. If an actual `String` is absolutely necessary, then a newtype wrapper can be used, on which `SchemaGenerator` is derived manually.",
+      "type": "string"
+    },
+    "Slab": {
+      "description": "A slab is a data structure for a specific side of the market containing a slab header and array of nodes of a critbit tree whose leaves contain the data for an order of the orderbook. The side of the orderbook for which a slab holds data(orders) for can be identified using [`StateType`]",
+      "type": "object",
+      "required": [
+        "header",
+        "tree"
+      ],
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/SlabHeader"
+        },
+        "tree": {
+          "$ref": "#/definitions/Critbit_for_Order_and_2000_and_1000"
+        }
+      }
+    },
+    "SlabHeader": {
+      "type": "object",
+      "required": [
+        "account_type",
+        "market_address",
+        "root_node",
+        "total_orders"
+      ],
+      "properties": {
+        "account_type": {
+          "$ref": "#/definitions/StateType"
+        },
+        "market_address": {
+          "$ref": "#/definitions/MarketId"
+        },
+        "root_node": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "total_orders": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "SocialLossInfo": {
+      "type": "object",
+      "required": [
+        "amount",
+        "product_idx"
+      ],
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "product_idx": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        }
+      }
+    },
+    "StateType": {
+      "type": "string",
+      "enum": [
+        "Uninitialized",
+        "Market",
+        "Bids",
+        "Asks"
+      ]
+    },
+    "TokenId": {
+      "description": "A globally unique identifier.",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "uint8",
+        "minimum": 0.0
+      },
+      "maxItems": 32,
+      "minItems": 32
+    },
+    "TraderPosition": {
+      "type": "object",
+      "required": [
+        "last_cum_funding_snapshot",
+        "last_social_loss_snapshot",
+        "pending_position",
+        "position",
+        "product_index",
+        "product_key",
+        "tag"
+      ],
+      "properties": {
+        "last_cum_funding_snapshot": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "last_social_loss_snapshot": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "pending_position": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "position": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "product_index": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "product_key": {
+          "$ref": "#/definitions/ProductId"
+        },
+        "tag": {
+          "$ref": "#/definitions/AccountTag"
+        }
+      }
+    },
+    "TraderRiskGroup": {
+      "type": "object",
+      "required": [
+        "active_products",
+        "allocated_for_future_use",
+        "cash_balance",
+        "fee_state_account",
+        "id",
+        "locked_collateral",
+        "maker_fee_bps",
+        "market_product_group",
+        "notional_maker_volume",
+        "notional_taker_volume",
+        "open_orders",
+        "pending_cash_balance",
+        "pending_fees",
+        "referral_fees",
+        "referred_takers_notional_volume",
+        "tag",
+        "taker_fee_bps",
+        "total_deposited",
+        "total_withdrawn",
+        "trader_positions",
+        "valid_until"
+      ],
+      "properties": {
+        "active_products": {
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 0.0
+        },
+        "allocated_for_future_use": {
+          "type": "integer",
+          "format": "uint8",
+          "minimum": 0.0
+        },
+        "cash_balance": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "fee_state_account": {
+          "$ref": "#/definitions/Address"
+        },
+        "id": {
+          "$ref": "#/definitions/TrgId"
+        },
+        "locked_collateral": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LockedCollateral"
+          },
+          "maxItems": 16,
+          "minItems": 16
+        },
+        "maker_fee_bps": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "market_product_group": {
+          "$ref": "#/definitions/MPGId"
+        },
+        "notional_maker_volume": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "notional_taker_volume": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "open_orders": {
+          "$ref": "#/definitions/OpenOrders"
+        },
+        "pending_cash_balance": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "pending_fees": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "referral_fees": {
+          "description": "referral_fees is not necessarily REFERRER_FEES_PROPORTION * referred_takers_notional_volume, because combo volume has only collects 1/8th the fees as outright volume",
+          "allOf": [
+            {
+              "$ref": "#/definitions/Fractional"
+            }
+          ]
+        },
+        "referred_takers_notional_volume": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "tag": {
+          "$ref": "#/definitions/AccountTag"
+        },
+        "taker_fee_bps": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_deposited": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "total_withdrawn": {
+          "$ref": "#/definitions/Fractional"
+        },
+        "trader_positions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TraderPosition"
+          },
+          "maxItems": 16,
+          "minItems": 16
+        },
+        "valid_until": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "TrgId": {
+      "$ref": "#/definitions/Address"
+    },
+    "Wallet": {
+      "type": "object",
+      "required": [
+        "revoked",
+        "role",
+        "smart_wallet",
+        "wallet_type"
+      ],
+      "properties": {
+        "revoked": {
+          "type": "boolean"
+        },
+        "role": {
+          "$ref": "#/definitions/Role"
+        },
+        "smart_wallet": {
+          "$ref": "#/definitions/Address"
+        },
+        "wallet_type": {
+          "$ref": "#/definitions/WalletType"
+        }
+      }
+    },
+    "WalletType": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "Solana"
+          ],
+          "properties": {
+            "Solana": {
+              "type": "object",
+              "required": [
+                "address"
+              ],
+              "properties": {
+                "address": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  },
+                  "maxItems": 32,
+                  "minItems": 32
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Aptos"
+          ],
+          "properties": {
+            "Aptos": {
+              "type": "object",
+              "required": [
+                "address"
+              ],
+              "properties": {
+                "address": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  },
+                  "maxItems": 32,
+                  "minItems": 32
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Ethereum"
+          ],
+          "properties": {
+            "Ethereum": {
+              "type": "object",
+              "required": [
+                "address"
+              ],
+              "properties": {
+                "address": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  },
+                  "maxItems": 20,
+                  "minItems": 20
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "Sui"
+          ],
+          "properties": {
+            "Sui": {
+              "type": "object",
+              "required": [
+                "address"
+              ],
+              "properties": {
+                "address": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "uint8",
+                    "minimum": 0.0
+                  },
+                  "maxItems": 32,
+                  "minItems": 32
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

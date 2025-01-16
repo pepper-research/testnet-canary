@@ -1,0 +1,5626 @@
+{
+  "types": [
+    {
+      "Struct": {
+        "type_name": "Transaction",
+        "serde_type_name": "Transaction",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "ByIndex": 1
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "pub_key",
+            "serde_display_name": "pub_key",
+            "silent": false,
+            "value": {
+              "ByIndex": 2
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "runtime_call",
+            "serde_display_name": "runtime_call",
+            "silent": false,
+            "value": {
+              "ByIndex": 3
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "details",
+            "serde_display_name": "details",
+            "silent": false,
+            "value": {
+              "ByIndex": 178
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Ed25519Signature",
+        "serde_type_name": "Ed25519Signature",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "msg_sig",
+            "serde_display_name": "msg_sig",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 64,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Ed25519PublicKey",
+        "serde_type_name": "Ed25519PublicKey",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "pub_key",
+            "serde_display_name": "pub_key",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "RuntimeCall",
+        "serde_type_name": "RuntimeCall",
+        "variants": [
+          {
+            "name": "Accounts",
+            "serde_name": "accounts",
+            "template": null,
+            "value": {
+              "ByIndex": 4
+            }
+          },
+          {
+            "name": "Nonces",
+            "serde_name": "nonces",
+            "template": null,
+            "value": {
+              "ByIndex": 9
+            }
+          },
+          {
+            "name": "Bank",
+            "serde_name": "bank",
+            "template": null,
+            "value": {
+              "ByIndex": 11
+            }
+          },
+          {
+            "name": "SequencerRegistry",
+            "serde_name": "sequencer_registry",
+            "template": null,
+            "value": {
+              "ByIndex": 22
+            }
+          },
+          {
+            "name": "AttesterIncentives",
+            "serde_name": "attester_incentives",
+            "template": null,
+            "value": {
+              "ByIndex": 28
+            }
+          },
+          {
+            "name": "ProverIncentives",
+            "serde_name": "prover_incentives",
+            "template": null,
+            "value": {
+              "ByIndex": 33
+            }
+          },
+          {
+            "name": "ChainState",
+            "serde_name": "chain_state",
+            "template": null,
+            "value": {
+              "ByIndex": 37
+            }
+          },
+          {
+            "name": "BlobStorage",
+            "serde_name": "blob_storage",
+            "template": null,
+            "value": {
+              "ByIndex": 38
+            }
+          },
+          {
+            "name": "Paymaster",
+            "serde_name": "paymaster",
+            "template": null,
+            "value": {
+              "ByIndex": 39
+            }
+          },
+          {
+            "name": "Time",
+            "serde_name": "time",
+            "template": null,
+            "value": {
+              "ByIndex": 67
+            }
+          },
+          {
+            "name": "Capsule",
+            "serde_name": "capsule",
+            "template": null,
+            "value": {
+              "ByIndex": 71
+            }
+          },
+          {
+            "name": "Aaob",
+            "serde_name": "aaob",
+            "template": null,
+            "value": {
+              "ByIndex": 89
+            }
+          },
+          {
+            "name": "Risk",
+            "serde_name": "risk",
+            "template": null,
+            "value": {
+              "ByIndex": 98
+            }
+          },
+          {
+            "name": "Lut",
+            "serde_name": "lut",
+            "template": null,
+            "value": {
+              "ByIndex": 173
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 5
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "InsertCredentialId",
+            "serde_name": "insert_credential_id",
+            "template": null,
+            "value": {
+              "ByIndex": 6
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 7
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 8
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 10
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "NotInstantiable",
+        "serde_type_name": "NotInstantiable",
+        "variants": [],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 12
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "CreateToken",
+            "serde_name": "create_token",
+            "template": null,
+            "value": {
+              "ByIndex": 13
+            }
+          },
+          {
+            "name": "Transfer",
+            "serde_name": "transfer",
+            "template": "Transfer to address {} {}.",
+            "value": {
+              "ByIndex": 16
+            }
+          },
+          {
+            "name": "Burn",
+            "serde_name": "burn",
+            "template": null,
+            "value": {
+              "ByIndex": 19
+            }
+          },
+          {
+            "name": "Mint",
+            "serde_name": "mint",
+            "template": null,
+            "value": {
+              "ByIndex": 20
+            }
+          },
+          {
+            "name": "Freeze",
+            "serde_name": "freeze",
+            "template": null,
+            "value": {
+              "ByIndex": 21
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CreateToken",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CreateToken",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "token_name",
+            "serde_display_name": "token_name",
+            "silent": false,
+            "value": {
+              "Immediate": "String"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "initial_balance",
+            "serde_display_name": "initial_balance",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mint_to_address",
+            "serde_display_name": "mint_to_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "admins",
+            "serde_display_name": "admins",
+            "silent": false,
+            "value": {
+              "ByIndex": 15
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "sov"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 14
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Transfer",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Transfer",
+        "template": "Transfer to address {} {}.",
+        "fields": [
+          {
+            "display_name": "to",
+            "serde_display_name": "to",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "coins",
+            "serde_display_name": "coins",
+            "silent": false,
+            "value": {
+              "ByIndex": 17
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Coins",
+        "serde_type_name": "Coins",
+        "template": "{} coins of token ID {}",
+        "fields": [
+          {
+            "display_name": "amount",
+            "serde_display_name": "amount",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "token_id",
+            "serde_display_name": "token_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 18
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "token_"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Burn",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Burn",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "coins",
+            "serde_display_name": "coins",
+            "silent": false,
+            "value": {
+              "ByIndex": 17
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Mint",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Mint",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "coins",
+            "serde_display_name": "coins",
+            "silent": false,
+            "value": {
+              "ByIndex": 17
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mint_to_address",
+            "serde_display_name": "mint_to_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Freeze",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Freeze",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "token_id",
+            "serde_display_name": "token_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 18
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 23
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "Register",
+            "serde_name": "register",
+            "template": null,
+            "value": {
+              "ByIndex": 24
+            }
+          },
+          {
+            "name": "Deposit",
+            "serde_name": "deposit",
+            "template": null,
+            "value": {
+              "ByIndex": 26
+            }
+          },
+          {
+            "name": "Exit",
+            "serde_name": "exit",
+            "template": null,
+            "value": {
+              "ByIndex": 27
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Register",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Register",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "da_address",
+            "serde_display_name": "da_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 25
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "amount",
+            "serde_display_name": "amount",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Deposit",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Deposit",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "da_address",
+            "serde_display_name": "da_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 25
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "amount",
+            "serde_display_name": "amount",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_Exit",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_Exit",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "da_address",
+            "serde_display_name": "da_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 25
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 29
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "RegisterAttester",
+            "serde_name": "register_attester",
+            "template": null,
+            "value": {
+              "ByIndex": 30
+            }
+          },
+          {
+            "name": "BeginExitAttester",
+            "serde_name": "begin_exit_attester",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "ExitAttester",
+            "serde_name": "exit_attester",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "RegisterChallenger",
+            "serde_name": "register_challenger",
+            "template": null,
+            "value": {
+              "ByIndex": 31
+            }
+          },
+          {
+            "name": "ExitChallenger",
+            "serde_name": "exit_challenger",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "DepositAttester",
+            "serde_name": "deposit_attester",
+            "template": null,
+            "value": {
+              "ByIndex": 32
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 34
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "Register",
+            "serde_name": "register",
+            "template": null,
+            "value": {
+              "ByIndex": 35
+            }
+          },
+          {
+            "name": "Deposit",
+            "serde_name": "deposit",
+            "template": null,
+            "value": {
+              "ByIndex": 36
+            }
+          },
+          {
+            "name": "Exit",
+            "serde_name": "exit",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 10
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 10
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 40
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "RegisterPaymaster",
+            "serde_name": "register_paymaster",
+            "template": null,
+            "value": {
+              "ByIndex": 41
+            }
+          },
+          {
+            "name": "SetPayerForSequencer",
+            "serde_name": "set_payer_for_sequencer",
+            "template": null,
+            "value": {
+              "ByIndex": 56
+            }
+          },
+          {
+            "name": "UpdatePolicy",
+            "serde_name": "update_policy",
+            "template": null,
+            "value": {
+              "ByIndex": 57
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_RegisterPaymaster",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_RegisterPaymaster",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "policy",
+            "serde_display_name": "policy",
+            "silent": false,
+            "value": {
+              "ByIndex": 42
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "PaymasterPolicy",
+        "serde_type_name": "PaymasterPolicy",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "default_payee_policy",
+            "serde_display_name": "default_payee_policy",
+            "silent": false,
+            "value": {
+              "ByIndex": 43
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "payees",
+            "serde_display_name": "payees",
+            "silent": false,
+            "value": {
+              "ByIndex": 51
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "authorized_updaters",
+            "serde_display_name": "authorized_updaters",
+            "silent": false,
+            "value": {
+              "ByIndex": 15
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "authorized_sequencers",
+            "serde_display_name": "authorized_sequencers",
+            "silent": false,
+            "value": {
+              "ByIndex": 53
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "PayeePolicy",
+        "serde_type_name": "PayeePolicy",
+        "variants": [
+          {
+            "name": "Allow",
+            "serde_name": "allow",
+            "template": null,
+            "value": {
+              "ByIndex": 44
+            }
+          },
+          {
+            "name": "Deny",
+            "serde_name": "deny",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_PayeePolicy_Allow",
+        "serde_type_name": "__SovVirtualWallet_PayeePolicy_Allow",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "max_fee",
+            "serde_display_name": "max_fee",
+            "silent": false,
+            "value": {
+              "ByIndex": 45
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "gas_limit",
+            "serde_display_name": "gas_limit",
+            "silent": false,
+            "value": {
+              "ByIndex": 46
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_gas_price",
+            "serde_display_name": "max_gas_price",
+            "silent": false,
+            "value": {
+              "ByIndex": 49
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u64",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 47
+        }
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 48
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 2,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u64",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 50
+        }
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 48
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 52
+        }
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 14
+            },
+            "silent": false,
+            "doc": ""
+          },
+          {
+            "value": {
+              "ByIndex": 43
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "AuthorizedSequencers",
+        "serde_type_name": "AuthorizedSequencers",
+        "variants": [
+          {
+            "name": "All",
+            "serde_name": "all",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Some",
+            "serde_name": "some",
+            "template": null,
+            "value": {
+              "ByIndex": 54
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 55
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 25
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_SetPayerForSequencer",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_SetPayerForSequencer",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "payer",
+            "serde_display_name": "payer",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_UpdatePolicy",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_UpdatePolicy",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "payer",
+            "serde_display_name": "payer",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "update",
+            "serde_display_name": "update",
+            "silent": false,
+            "value": {
+              "ByIndex": 58
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "PolicyUpdate",
+        "serde_type_name": "PolicyUpdate",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "sequencer_update",
+            "serde_display_name": "sequencer_update",
+            "silent": false,
+            "value": {
+              "ByIndex": 59
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "updaters_to_add",
+            "serde_display_name": "updaters_to_add",
+            "silent": false,
+            "value": {
+              "ByIndex": 64
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "updaters_to_remove",
+            "serde_display_name": "updaters_to_remove",
+            "silent": false,
+            "value": {
+              "ByIndex": 64
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "payee_policies_to_set",
+            "serde_display_name": "payee_policies_to_set",
+            "silent": false,
+            "value": {
+              "ByIndex": 65
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "payee_policies_to_delete",
+            "serde_display_name": "payee_policies_to_delete",
+            "silent": false,
+            "value": {
+              "ByIndex": 64
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "default_policy",
+            "serde_display_name": "default_policy",
+            "silent": false,
+            "value": {
+              "ByIndex": 66
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 60
+        }
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "SequencerSetUpdate",
+        "serde_type_name": "SequencerSetUpdate",
+        "variants": [
+          {
+            "name": "AllowAll",
+            "serde_name": "allow_all",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Update",
+            "serde_name": "update",
+            "template": null,
+            "value": {
+              "ByIndex": 61
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 62
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "AllowedSequencerUpdate",
+        "serde_type_name": "AllowedSequencerUpdate",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "to_add",
+            "serde_display_name": "to_add",
+            "silent": false,
+            "value": {
+              "ByIndex": 63
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "to_remove",
+            "serde_display_name": "to_remove",
+            "silent": false,
+            "value": {
+              "ByIndex": 63
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 55
+        }
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 15
+        }
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 51
+        }
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 43
+        }
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 68
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "UpdateSlot",
+            "serde_name": "UpdateSlot",
+            "template": null,
+            "value": {
+              "ByIndex": 69
+            }
+          },
+          {
+            "name": "UpdateTimestamp",
+            "serde_name": "UpdateTimestamp",
+            "template": null,
+            "value": {
+              "ByIndex": 70
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_UpdateSlot",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_UpdateSlot",
+        "template": null,
+        "fields": []
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_UpdateTimestamp",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_UpdateTimestamp",
+        "template": null,
+        "fields": []
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 72
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "CreateWallet",
+            "serde_name": "CreateWallet",
+            "template": null,
+            "value": {
+              "ByIndex": 73
+            }
+          },
+          {
+            "name": "AddAdminWallet",
+            "serde_name": "AddAdminWallet",
+            "template": null,
+            "value": {
+              "ByIndex": 79
+            }
+          },
+          {
+            "name": "AddEphemeralWallet",
+            "serde_name": "AddEphemeralWallet",
+            "template": null,
+            "value": {
+              "ByIndex": 86
+            }
+          },
+          {
+            "name": "AddRecoveryWallet",
+            "serde_name": "AddRecoveryWallet",
+            "template": null,
+            "value": {
+              "ByIndex": 87
+            }
+          },
+          {
+            "name": "RevokeWallet",
+            "serde_name": "RevokeWallet",
+            "template": null,
+            "value": {
+              "ByIndex": 88
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CreateWallet",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CreateWallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "wallet_type",
+            "serde_display_name": "wallet_type",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteVec": {
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "WalletType",
+        "serde_type_name": "WalletType",
+        "variants": [
+          {
+            "name": "Solana",
+            "serde_name": "Solana",
+            "template": null,
+            "value": {
+              "ByIndex": 75
+            }
+          },
+          {
+            "name": "Aptos",
+            "serde_name": "Aptos",
+            "template": null,
+            "value": {
+              "ByIndex": 76
+            }
+          },
+          {
+            "name": "Ethereum",
+            "serde_name": "Ethereum",
+            "template": null,
+            "value": {
+              "ByIndex": 77
+            }
+          },
+          {
+            "name": "Sui",
+            "serde_name": "Sui",
+            "template": null,
+            "value": {
+              "ByIndex": 78
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_WalletType_Solana",
+        "serde_type_name": "__SovVirtualWallet_WalletType_Solana",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_WalletType_Aptos",
+        "serde_type_name": "__SovVirtualWallet_WalletType_Aptos",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_WalletType_Ethereum",
+        "serde_type_name": "__SovVirtualWallet_WalletType_Ethereum",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 20,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_WalletType_Sui",
+        "serde_type_name": "__SovVirtualWallet_WalletType_Sui",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_AddAdminWallet",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_AddAdminWallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "approving_wallet",
+            "serde_display_name": "approving_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 80
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "admin_wallet",
+            "serde_display_name": "admin_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteVec": {
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Wallet",
+        "serde_type_name": "Wallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "wallet_type",
+            "serde_display_name": "wallet_type",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "revoked",
+            "serde_display_name": "revoked",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "role",
+            "serde_display_name": "role",
+            "silent": false,
+            "value": {
+              "ByIndex": 81
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "smart_wallet",
+            "serde_display_name": "smart_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "Role",
+        "serde_type_name": "Role",
+        "variants": [
+          {
+            "name": "Admin",
+            "serde_name": "Admin",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Ephemeral",
+            "serde_name": "Ephemeral",
+            "template": null,
+            "value": {
+              "ByIndex": 82
+            }
+          },
+          {
+            "name": "Recovery",
+            "serde_name": "Recovery",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_Role_Ephemeral",
+        "serde_type_name": "__SovVirtualWallet_Role_Ephemeral",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "expiration_timestamp",
+            "serde_display_name": "expiration_timestamp",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "scopes",
+            "serde_display_name": "scopes",
+            "silent": false,
+            "value": {
+              "ByIndex": 83
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 84
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 85
+        }
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "Scope",
+        "serde_type_name": "Scope",
+        "variants": [
+          {
+            "name": "Trading",
+            "serde_name": "Trading",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Funds",
+            "serde_name": "Funds",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_AddEphemeralWallet",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_AddEphemeralWallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "approving_wallet",
+            "serde_display_name": "approving_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 80
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ephemeral_wallet",
+            "serde_display_name": "ephemeral_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "scopes",
+            "serde_display_name": "scopes",
+            "silent": false,
+            "value": {
+              "ByIndex": 83
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "expiration_timestamp",
+            "serde_display_name": "expiration_timestamp",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteVec": {
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_AddRecoveryWallet",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_AddRecoveryWallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "approving_wallet",
+            "serde_display_name": "approving_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 80
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "recovery_wallet",
+            "serde_display_name": "recovery_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteVec": {
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_RevokeWallet",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_RevokeWallet",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "address",
+            "serde_display_name": "address",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "approving_wallet",
+            "serde_display_name": "approving_wallet",
+            "silent": false,
+            "value": {
+              "ByIndex": 80
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "wallet_type",
+            "serde_display_name": "wallet_type",
+            "silent": false,
+            "value": {
+              "ByIndex": 74
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "signature",
+            "serde_display_name": "signature",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteVec": {
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 90
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "CreateOrder",
+            "serde_name": "CreateOrder",
+            "template": null,
+            "value": {
+              "ByIndex": 91
+            }
+          },
+          {
+            "name": "CancelOrder",
+            "serde_name": "CancelOrder",
+            "template": null,
+            "value": {
+              "ByIndex": 95
+            }
+          },
+          {
+            "name": "CreateMarket",
+            "serde_name": "CreateMarket",
+            "template": null,
+            "value": {
+              "ByIndex": 96
+            }
+          },
+          {
+            "name": "CloseMarket",
+            "serde_name": "CloseMarket",
+            "template": null,
+            "value": {
+              "ByIndex": 97
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CreateOrder",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CreateOrder",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "market_id",
+            "serde_display_name": "market_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 92
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "side",
+            "serde_display_name": "side",
+            "silent": false,
+            "value": {
+              "ByIndex": 93
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_base_qty",
+            "serde_display_name": "max_base_qty",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_quote_qty",
+            "serde_display_name": "max_quote_qty",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "limit_price",
+            "serde_display_name": "limit_price",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "post_only",
+            "serde_display_name": "post_only",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "post_allowed",
+            "serde_display_name": "post_allowed",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "self_trade_behavior",
+            "serde_display_name": "self_trade_behavior",
+            "silent": false,
+            "value": {
+              "ByIndex": 94
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "match_limit",
+            "serde_display_name": "match_limit",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "trg_id",
+            "serde_display_name": "trg_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "market"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "Side",
+        "serde_type_name": "Side",
+        "variants": [
+          {
+            "name": "Bid",
+            "serde_name": "Bid",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Ask",
+            "serde_name": "Ask",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "SelfTradeHandler",
+        "serde_type_name": "SelfTradeHandler",
+        "variants": [
+          {
+            "name": "DecrementTake",
+            "serde_name": "DecrementTake",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "CancelProvide",
+            "serde_name": "CancelProvide",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "AbortTx",
+            "serde_name": "AbortTx",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CancelOrder",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CancelOrder",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "market_id",
+            "serde_display_name": "market_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 92
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "order_id",
+            "serde_display_name": "order_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u128",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "side",
+            "serde_display_name": "side",
+            "silent": false,
+            "value": {
+              "ByIndex": 93
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CreateMarket",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CreateMarket",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "market_name",
+            "serde_display_name": "market_name",
+            "silent": false,
+            "value": {
+              "Immediate": "String"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "fee_budget",
+            "serde_display_name": "fee_budget",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "min_base_size",
+            "serde_display_name": "min_base_size",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "tick_size",
+            "serde_display_name": "tick_size",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CloseMarket",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CloseMarket",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "market_name",
+            "serde_display_name": "market_name",
+            "silent": false,
+            "value": {
+              "Immediate": "String"
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 99
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "InitializeCovarianceMatrix",
+            "serde_name": "InitializeCovarianceMatrix",
+            "template": null,
+            "value": {
+              "ByIndex": 100
+            }
+          },
+          {
+            "name": "InitializeMarkPrices",
+            "serde_name": "InitializeMarkPrices",
+            "template": null,
+            "value": {
+              "ByIndex": 135
+            }
+          },
+          {
+            "name": "UpdateCovarianceMatrix",
+            "serde_name": "UpdateCovarianceMatrix",
+            "template": null,
+            "value": {
+              "ByIndex": 137
+            }
+          },
+          {
+            "name": "UpdateMarkPrices",
+            "serde_name": "UpdateMarkPrices",
+            "template": null,
+            "value": {
+              "ByIndex": 142
+            }
+          },
+          {
+            "name": "CollectMarkPricesGarbage",
+            "serde_name": "CollectMarkPricesGarbage",
+            "template": null,
+            "value": {
+              "ByIndex": 158
+            }
+          },
+          {
+            "name": "RemoveMarketProductIndexFromVarianceCache",
+            "serde_name": "RemoveMarketProductIndexFromVarianceCache",
+            "template": null,
+            "value": {
+              "ByIndex": 159
+            }
+          },
+          {
+            "name": "DeleteMarkPrices",
+            "serde_name": "DeleteMarkPrices",
+            "template": null,
+            "value": {
+              "ByIndex": 172
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_InitializeCovarianceMatrix",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_InitializeCovarianceMatrix",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "MarketProductGroup",
+        "serde_type_name": "MarketProductGroup",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "id",
+            "serde_display_name": "id",
+            "silent": false,
+            "value": {
+              "ByIndex": 102
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mpg_type",
+            "serde_display_name": "mpg_type",
+            "silent": false,
+            "value": {
+              "ByIndex": 103
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mpg_authority",
+            "serde_display_name": "mpg_authority",
+            "silent": false,
+            "value": {
+              "ByIndex": 104
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "name",
+            "serde_display_name": "name",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 16,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "collected_fees",
+            "serde_display_name": "collected_fees",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "decimals",
+            "serde_display_name": "decimals",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "active_flags_products",
+            "serde_display_name": "active_flags_products",
+            "silent": false,
+            "value": {
+              "ByIndex": 106
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ewma_windows",
+            "serde_display_name": "ewma_windows",
+            "silent": false,
+            "value": {
+              "ByIndex": 108
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "active_products",
+            "serde_display_name": "active_products",
+            "silent": false,
+            "value": {
+              "ByIndex": 109
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_maker_fee_bps",
+            "serde_display_name": "max_maker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "min_maker_fee_bps",
+            "serde_display_name": "min_maker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_taker_fee_bps",
+            "serde_display_name": "max_taker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "min_taker_fee_bps",
+            "serde_display_name": "min_taker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "sequence_number",
+            "serde_display_name": "sequence_number",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u128",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "is_mpg_killed",
+            "serde_display_name": "is_mpg_killed",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "in_admin_mode",
+            "serde_display_name": "in_admin_mode",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "risk_output_register",
+            "serde_display_name": "risk_output_register",
+            "silent": false,
+            "value": {
+              "ByIndex": 124
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "risk_engine_module_id",
+            "serde_display_name": "risk_engine_module_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 134
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "fee_model_module_id",
+            "serde_display_name": "fee_model_module_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 134
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "market"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "MPGType",
+        "serde_type_name": "MPGType",
+        "variants": [
+          {
+            "name": "Uninitialized",
+            "serde_name": "Uninitialized",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "MPG",
+            "serde_name": "MPG",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "MPGWithCombos",
+            "serde_name": "MPGWithCombos",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 14
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Fractional",
+        "serde_type_name": "Fractional",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "m",
+            "serde_display_name": "m",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "exp",
+            "serde_display_name": "exp",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "BitPair",
+        "serde_type_name": "BitPair",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "inner",
+            "serde_display_name": "inner",
+            "silent": false,
+            "value": {
+              "ByIndex": 107
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 2,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u128",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Array": {
+        "len": 4,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u64",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "ProductsArray",
+        "serde_type_name": "ProductsArray",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "array",
+            "serde_display_name": "array",
+            "silent": false,
+            "value": {
+              "ByIndex": 110
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 111
+        }
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "Product",
+        "serde_type_name": "Product",
+        "variants": [
+          {
+            "name": "Outright",
+            "serde_name": "Outright",
+            "template": null,
+            "value": {
+              "ByIndex": 112
+            }
+          },
+          {
+            "name": "Combo",
+            "serde_name": "Combo",
+            "template": null,
+            "value": {
+              "ByIndex": 120
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_Product_Outright",
+        "serde_type_name": "__SovVirtualWallet_Product_Outright",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "outright_product",
+            "serde_display_name": "outright_product",
+            "silent": false,
+            "value": {
+              "ByIndex": 113
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "OutrightProduct",
+        "serde_type_name": "OutrightProduct",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "metadata",
+            "serde_display_name": "metadata",
+            "silent": false,
+            "value": {
+              "ByIndex": 114
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "num_tracking_risk_states",
+            "serde_display_name": "num_tracking_risk_states",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "product_status",
+            "serde_display_name": "product_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 118
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "dust",
+            "serde_display_name": "dust",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "cumulative_funding_per_share",
+            "serde_display_name": "cumulative_funding_per_share",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "cumulative_social_loss_per_share",
+            "serde_display_name": "cumulative_social_loss_per_share",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "open_long_interest",
+            "serde_display_name": "open_long_interest",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "open_short_interest",
+            "serde_display_name": "open_short_interest",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mark_price_qualifying_cum_value",
+            "serde_display_name": "mark_price_qualifying_cum_value",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "mark_price_max_qualifying_width",
+            "serde_display_name": "mark_price_max_qualifying_width",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "padding",
+            "serde_display_name": "padding",
+            "silent": false,
+            "value": {
+              "ByIndex": 119
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "ProductMetadata",
+        "serde_type_name": "ProductMetadata",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "product_id",
+            "serde_display_name": "product_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 115
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "price_index",
+            "serde_display_name": "price_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "name",
+            "serde_display_name": "name",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 16,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "orderbook_id",
+            "serde_display_name": "orderbook_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "tick_size",
+            "serde_display_name": "tick_size",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "base_decimals",
+            "serde_display_name": "base_decimals",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "price_offset",
+            "serde_display_name": "price_offset",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "notional_traded_volume",
+            "serde_display_name": "notional_traded_volume",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "prices",
+            "serde_display_name": "prices",
+            "silent": false,
+            "value": {
+              "ByIndex": 116
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "product"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "PriceEwma",
+        "serde_type_name": "PriceEwma",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "ewma_bid",
+            "serde_display_name": "ewma_bid",
+            "silent": false,
+            "value": {
+              "ByIndex": 117
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ewma_ask",
+            "serde_display_name": "ewma_ask",
+            "silent": false,
+            "value": {
+              "ByIndex": 117
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "slot",
+            "serde_display_name": "slot",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bid",
+            "serde_display_name": "bid",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ask",
+            "serde_display_name": "ask",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "prev_bid",
+            "serde_display_name": "prev_bid",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "prev_ask",
+            "serde_display_name": "prev_ask",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 4,
+        "value": {
+          "ByIndex": 105
+        }
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "ProductStatus",
+        "serde_type_name": "ProductStatus",
+        "variants": [
+          {
+            "name": "Uninitialized",
+            "serde_name": "Uninitialized",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Initialized",
+            "serde_name": "Initialized",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Expired",
+            "serde_name": "Expired",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Expiring",
+            "serde_name": "Expiring",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Array": {
+        "len": 10,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u64",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_Product_Combo",
+        "serde_type_name": "__SovVirtualWallet_Product_Combo",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "combo_product",
+            "serde_display_name": "combo_product",
+            "silent": false,
+            "value": {
+              "ByIndex": 121
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "ComboProduct",
+        "serde_type_name": "ComboProduct",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "metadata",
+            "serde_display_name": "metadata",
+            "silent": false,
+            "value": {
+              "ByIndex": 114
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "num_legs",
+            "serde_display_name": "num_legs",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "legs_array",
+            "serde_display_name": "legs_array",
+            "silent": false,
+            "value": {
+              "ByIndex": 122
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 4,
+        "value": {
+          "ByIndex": 123
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "ComboLeg",
+        "serde_type_name": "ComboLeg",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "product_index",
+            "serde_display_name": "product_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "product_key",
+            "serde_display_name": "product_key",
+            "silent": false,
+            "value": {
+              "ByIndex": 115
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ratio",
+            "serde_display_name": "ratio",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "RiskEngineOutput",
+        "serde_type_name": "RiskEngineOutput",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "health_output",
+            "serde_display_name": "health_output",
+            "silent": false,
+            "value": {
+              "ByIndex": 125
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "HealthOutput",
+        "serde_type_name": "HealthOutput",
+        "variants": [
+          {
+            "name": "Healthy",
+            "serde_name": "Healthy",
+            "template": null,
+            "value": {
+              "ByIndex": 126
+            }
+          },
+          {
+            "name": "Liquidatable",
+            "serde_name": "Liquidatable",
+            "template": null,
+            "value": {
+              "ByIndex": 130
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_HealthOutput_Healthy",
+        "serde_type_name": "__SovVirtualWallet_HealthOutput_Healthy",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "health_status",
+            "serde_display_name": "health_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 127
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "HealthTracker",
+        "serde_type_name": "HealthTracker",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "health_status",
+            "serde_display_name": "health_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 128
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "action_status",
+            "serde_display_name": "action_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 129
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "HealthStatus",
+        "serde_type_name": "HealthStatus",
+        "variants": [
+          {
+            "name": "Healthy",
+            "serde_name": "Healthy",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Unhealthy",
+            "serde_name": "Unhealthy",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Liquidatable",
+            "serde_name": "Liquidatable",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "NotLiquidatable",
+            "serde_name": "NotLiquidatable",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "ActionStatus",
+        "serde_type_name": "ActionStatus",
+        "variants": [
+          {
+            "name": "Approved",
+            "serde_name": "Approved",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "NotApproved",
+            "serde_name": "NotApproved",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_HealthOutput_Liquidatable",
+        "serde_type_name": "__SovVirtualWallet_HealthOutput_Liquidatable",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "liquidation_status",
+            "serde_display_name": "liquidation_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 131
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "LiquidationStatus",
+        "serde_type_name": "LiquidationStatus",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "health_status",
+            "serde_display_name": "health_status",
+            "silent": false,
+            "value": {
+              "ByIndex": 128
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "action_result",
+            "serde_display_name": "action_result",
+            "silent": false,
+            "value": {
+              "ByIndex": 129
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "total_social_loss",
+            "serde_display_name": "total_social_loss",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "liquidation_price",
+            "serde_display_name": "liquidation_price",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "social_losses",
+            "serde_display_name": "social_losses",
+            "silent": false,
+            "value": {
+              "ByIndex": 132
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 133
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "SocialLossInfo",
+        "serde_type_name": "SocialLossInfo",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "product_idx",
+            "serde_display_name": "product_idx",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "amount",
+            "serde_display_name": "amount",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 32,
+                  "display": {
+                    "Bech32m": {
+                      "prefix": "module_"
+                    }
+                  }
+                }
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_InitializeMarkPrices",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_InitializeMarkPrices",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "is_hardcoded_oracle",
+            "serde_display_name": "is_hardcoded_oracle",
+            "silent": false,
+            "value": {
+              "Immediate": "Boolean"
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "hardcoded_oracle_id",
+            "serde_display_name": "hardcoded_oracle_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 136
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Option": {
+        "value": {
+          "ByIndex": 14
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_UpdateCovarianceMatrix",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_UpdateCovarianceMatrix",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "product_keys",
+            "serde_display_name": "product_keys",
+            "silent": false,
+            "value": {
+              "ByIndex": 138
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "standard_deviations",
+            "serde_display_name": "standard_deviations",
+            "silent": false,
+            "value": {
+              "ByIndex": 139
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "correlations",
+            "serde_display_name": "correlations",
+            "silent": false,
+            "value": {
+              "ByIndex": 141
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 115
+        }
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 140
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "FastInt",
+        "serde_type_name": "FastInt",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "value",
+            "serde_display_name": "value",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i128",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 139
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_UpdateMarkPrices",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_UpdateMarkPrices",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "products_to_update",
+            "serde_display_name": "products_to_update",
+            "silent": false,
+            "value": {
+              "ByIndex": 143
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Vec": {
+        "value": {
+          "ByIndex": 144
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "ProductMarkPriceUpdate",
+        "serde_type_name": "ProductMarkPriceUpdate",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "product_id",
+            "serde_display_name": "product_id",
+            "silent": false,
+            "value": {
+              "ByIndex": 115
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "asks",
+            "serde_display_name": "asks",
+            "silent": false,
+            "value": {
+              "ByIndex": 145
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bids",
+            "serde_display_name": "bids",
+            "silent": false,
+            "value": {
+              "ByIndex": 145
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Slab",
+        "serde_type_name": "Slab",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "header",
+            "serde_display_name": "header",
+            "silent": false,
+            "value": {
+              "ByIndex": 146
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "tree",
+            "serde_display_name": "tree",
+            "silent": false,
+            "value": {
+              "ByIndex": 148
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "SlabHeader",
+        "serde_type_name": "SlabHeader",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "account_type",
+            "serde_display_name": "account_type",
+            "silent": false,
+            "value": {
+              "ByIndex": 147
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "root_node",
+            "serde_display_name": "root_node",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "total_orders",
+            "serde_display_name": "total_orders",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "market_address",
+            "serde_display_name": "market_address",
+            "silent": false,
+            "value": {
+              "ByIndex": 92
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "StateType",
+        "serde_type_name": "StateType",
+        "variants": [
+          {
+            "name": "Uninitialized",
+            "serde_name": "Uninitialized",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Market",
+            "serde_name": "Market",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Bids",
+            "serde_name": "Bids",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Asks",
+            "serde_name": "Asks",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Critbit",
+        "serde_type_name": "Critbit",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "_padding0",
+            "serde_display_name": "_padding0",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "root",
+            "serde_display_name": "root",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "_padding1",
+            "serde_display_name": "_padding1",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "node_allocator",
+            "serde_display_name": "node_allocator",
+            "silent": false,
+            "value": {
+              "ByIndex": 149
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "leaves",
+            "serde_display_name": "leaves",
+            "silent": false,
+            "value": {
+              "ByIndex": 154
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "NodeAllocator",
+        "serde_type_name": "NodeAllocator",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "size",
+            "serde_display_name": "size",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bump_index",
+            "serde_display_name": "bump_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "free_list_head",
+            "serde_display_name": "free_list_head",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nodes",
+            "serde_display_name": "nodes",
+            "silent": false,
+            "value": {
+              "ByIndex": 150
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 2000,
+        "value": {
+          "ByIndex": 151
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Node",
+        "serde_type_name": "Node",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "registers",
+            "serde_display_name": "registers",
+            "silent": false,
+            "value": {
+              "ByIndex": 152
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "value",
+            "serde_display_name": "value",
+            "silent": false,
+            "value": {
+              "ByIndex": 153
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 4,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u32",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "CritbitNode",
+        "serde_type_name": "CritbitNode",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "key",
+            "serde_display_name": "key",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u128",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "prefix_len",
+            "serde_display_name": "prefix_len",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "_padding",
+            "serde_display_name": "_padding",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "NodeAllocator",
+        "serde_type_name": "NodeAllocator",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "size",
+            "serde_display_name": "size",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bump_index",
+            "serde_display_name": "bump_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "free_list_head",
+            "serde_display_name": "free_list_head",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nodes",
+            "serde_display_name": "nodes",
+            "silent": false,
+            "value": {
+              "ByIndex": 155
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 1000,
+        "value": {
+          "ByIndex": 156
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Node",
+        "serde_type_name": "Node",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "registers",
+            "serde_display_name": "registers",
+            "silent": false,
+            "value": {
+              "ByIndex": 152
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "value",
+            "serde_display_name": "value",
+            "silent": false,
+            "value": {
+              "ByIndex": 157
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "Order",
+        "serde_type_name": "Order",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "order_id",
+            "serde_display_name": "order_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "price",
+            "serde_display_name": "price",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "base_qty",
+            "serde_display_name": "base_qty",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "trg_id",
+            "serde_display_name": "trg_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_CollectMarkPricesGarbage",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_CollectMarkPricesGarbage",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_products_to_examine",
+            "serde_display_name": "max_products_to_examine",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u8",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_RemoveMarketProductIndexFromVarianceCache",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_RemoveMarketProductIndexFromVarianceCache",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "trg",
+            "serde_display_name": "trg",
+            "silent": false,
+            "value": {
+              "ByIndex": 160
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "market_product_index",
+            "serde_display_name": "market_product_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "TraderRiskGroup",
+        "serde_type_name": "TraderRiskGroup",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "tag",
+            "serde_display_name": "tag",
+            "silent": false,
+            "value": {
+              "ByIndex": 161
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "market_product_group",
+            "serde_display_name": "market_product_group",
+            "silent": false,
+            "value": {
+              "ByIndex": 102
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "id",
+            "serde_display_name": "id",
+            "silent": false,
+            "value": {
+              "ByIndex": 162
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "active_products",
+            "serde_display_name": "active_products",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 128,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "total_deposited",
+            "serde_display_name": "total_deposited",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "total_withdrawn",
+            "serde_display_name": "total_withdrawn",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "cash_balance",
+            "serde_display_name": "cash_balance",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "pending_cash_balance",
+            "serde_display_name": "pending_cash_balance",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "pending_fees",
+            "serde_display_name": "pending_fees",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "valid_until",
+            "serde_display_name": "valid_until",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "maker_fee_bps",
+            "serde_display_name": "maker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "taker_fee_bps",
+            "serde_display_name": "taker_fee_bps",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "trader_positions",
+            "serde_display_name": "trader_positions",
+            "silent": false,
+            "value": {
+              "ByIndex": 163
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "fee_state_account",
+            "serde_display_name": "fee_state_account",
+            "silent": false,
+            "value": {
+              "ByIndex": 14
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "locked_collateral",
+            "serde_display_name": "locked_collateral",
+            "silent": false,
+            "value": {
+              "ByIndex": 165
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "notional_maker_volume",
+            "serde_display_name": "notional_maker_volume",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "notional_taker_volume",
+            "serde_display_name": "notional_taker_volume",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "referred_takers_notional_volume",
+            "serde_display_name": "referred_takers_notional_volume",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "referral_fees",
+            "serde_display_name": "referral_fees",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "allocated_for_future_use",
+            "serde_display_name": "allocated_for_future_use",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "ByteArray": {
+                  "len": 256,
+                  "display": "Hex"
+                }
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "open_orders",
+            "serde_display_name": "open_orders",
+            "silent": false,
+            "value": {
+              "ByIndex": 167
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "AccountTag",
+        "serde_type_name": "AccountTag",
+        "variants": [
+          {
+            "name": "Uninitialized",
+            "serde_name": "Uninitialized",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "MarketProductGroup",
+            "serde_name": "MarketProductGroup",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "TraderRiskGroup",
+            "serde_name": "TraderRiskGroup",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "TraderPosition",
+            "serde_name": "TraderPosition",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "MarketProductGroupWithCombos",
+            "serde_name": "MarketProductGroupWithCombos",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "ComboGroup",
+            "serde_name": "ComboGroup",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "Combo",
+            "serde_name": "Combo",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "RiskProfile",
+            "serde_name": "RiskProfile",
+            "template": null,
+            "value": null
+          },
+          {
+            "name": "LockedCollateral",
+            "serde_name": "LockedCollateral",
+            "template": null,
+            "value": null
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 14
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 16,
+        "value": {
+          "ByIndex": 164
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "TraderPosition",
+        "serde_type_name": "TraderPosition",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "tag",
+            "serde_display_name": "tag",
+            "silent": false,
+            "value": {
+              "ByIndex": 161
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "product_key",
+            "serde_display_name": "product_key",
+            "silent": false,
+            "value": {
+              "ByIndex": 115
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "position",
+            "serde_display_name": "position",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "pending_position",
+            "serde_display_name": "pending_position",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "product_index",
+            "serde_display_name": "product_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u32",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "last_cum_funding_snapshot",
+            "serde_display_name": "last_cum_funding_snapshot",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "last_social_loss_snapshot",
+            "serde_display_name": "last_social_loss_snapshot",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 16,
+        "value": {
+          "ByIndex": 166
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "LockedCollateral",
+        "serde_type_name": "LockedCollateral",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "tag",
+            "serde_display_name": "tag",
+            "silent": false,
+            "value": {
+              "ByIndex": 161
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "ask_qty",
+            "serde_display_name": "ask_qty",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bid_qty",
+            "serde_display_name": "bid_qty",
+            "silent": false,
+            "value": {
+              "ByIndex": 105
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "OpenOrders",
+        "serde_type_name": "OpenOrders",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "free_list_head",
+            "serde_display_name": "free_list_head",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "total_open_orders",
+            "serde_display_name": "total_open_orders",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_open_orders",
+            "serde_display_name": "max_open_orders",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "products",
+            "serde_display_name": "products",
+            "silent": false,
+            "value": {
+              "ByIndex": 168
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "orders",
+            "serde_display_name": "orders",
+            "silent": false,
+            "value": {
+              "ByIndex": 170
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 256,
+        "value": {
+          "ByIndex": 169
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "OpenOrdersMetadata",
+        "serde_type_name": "OpenOrdersMetadata",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "ask_qty_in_book",
+            "serde_display_name": "ask_qty_in_book",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "bid_qty_in_book",
+            "serde_display_name": "bid_qty_in_book",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "i64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "head_index",
+            "serde_display_name": "head_index",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "num_open_orders",
+            "serde_display_name": "num_open_orders",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 100,
+        "value": {
+          "ByIndex": 171
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "OpenOrdersNode",
+        "serde_type_name": "OpenOrdersNode",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "id",
+            "serde_display_name": "id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u128",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "qty",
+            "serde_display_name": "qty",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "client_id",
+            "serde_display_name": "client_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "prev",
+            "serde_display_name": "prev",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "next",
+            "serde_display_name": "next",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u16",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_DeleteMarkPrices",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_DeleteMarkPrices",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "mpg",
+            "serde_display_name": "mpg",
+            "silent": false,
+            "value": {
+              "ByIndex": 101
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "ByIndex": 174
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Enum": {
+        "type_name": "CallMessage",
+        "serde_type_name": "CallMessage",
+        "variants": [
+          {
+            "name": "MutateAll",
+            "serde_name": "MutateAll",
+            "template": null,
+            "value": {
+              "ByIndex": 175
+            }
+          }
+        ],
+        "hide_tag": false
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "__SovVirtualWallet_CallMessage_MutateAll",
+        "serde_type_name": "__SovVirtualWallet_CallMessage_MutateAll",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "prices",
+            "serde_display_name": "prices",
+            "silent": false,
+            "value": {
+              "ByIndex": 176
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "aggregate_conf_intervals",
+            "serde_display_name": "aggregate_conf_intervals",
+            "silent": false,
+            "value": {
+              "ByIndex": 177
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Array": {
+        "len": 1,
+        "value": {
+          "ByIndex": 105
+        }
+      }
+    },
+    {
+      "Array": {
+        "len": 1,
+        "value": {
+          "Immediate": {
+            "Integer": [
+              "u32",
+              "Decimal"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "TxDetails",
+        "serde_type_name": "TxDetails",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "max_priority_fee_bips",
+            "serde_display_name": "max_priority_fee_bips",
+            "silent": false,
+            "value": {
+              "ByIndex": 179
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "max_fee",
+            "serde_display_name": "max_fee",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "gas_limit",
+            "serde_display_name": "gas_limit",
+            "silent": false,
+            "value": {
+              "ByIndex": 46
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "chain_id",
+            "serde_display_name": "chain_id",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Tuple": {
+        "template": null,
+        "fields": [
+          {
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "silent": false,
+            "doc": ""
+          }
+        ]
+      }
+    },
+    {
+      "Struct": {
+        "type_name": "UnsignedTransaction",
+        "serde_type_name": "UnsignedTransaction",
+        "template": null,
+        "fields": [
+          {
+            "display_name": "runtime_call",
+            "serde_display_name": "runtime_call",
+            "silent": false,
+            "value": {
+              "ByIndex": 3
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "nonce",
+            "serde_display_name": "nonce",
+            "silent": false,
+            "value": {
+              "Immediate": {
+                "Integer": [
+                  "u64",
+                  "Decimal"
+                ]
+              }
+            },
+            "doc": ""
+          },
+          {
+            "display_name": "details",
+            "serde_display_name": "details",
+            "silent": false,
+            "value": {
+              "ByIndex": 178
+            },
+            "doc": ""
+          }
+        ]
+      }
+    }
+  ],
+  "root_type_indices": [
+    0,
+    180,
+    3
+  ],
+  "metadata_hash": [
+    142,
+    20,
+    118,
+    187,
+    91,
+    222,
+    177,
+    142,
+    70,
+    2,
+    222,
+    10,
+    247,
+    62,
+    93,
+    20,
+    235,
+    16,
+    25,
+    173,
+    25,
+    237,
+    243,
+    242,
+    52,
+    118,
+    26,
+    141,
+    182,
+    98,
+    1,
+    89
+  ],
+  "templates": [
+    {},
+    {},
+    {
+      "transfer": {
+        "preencoded_bytes": [
+          2,
+          1
+        ],
+        "inputs": [
+          [
+            "to",
+            {
+              "type_link": {
+                "ByIndex": 14
+              },
+              "offset": 2
+            }
+          ],
+          [
+            "amount",
+            {
+              "type_link": {
+                "Immediate": {
+                  "Integer": [
+                    "u64",
+                    "Decimal"
+                  ]
+                }
+              },
+              "offset": 2
+            }
+          ],
+          [
+            "token_id",
+            {
+              "type_link": {
+                "ByIndex": 18
+              },
+              "offset": 2
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}

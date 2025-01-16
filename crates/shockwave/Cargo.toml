@@ -1,0 +1,62 @@
+[workspace]
+members = [
+    "core",
+    "networking",
+    "ripple",
+    "crds",
+    "fec",
+    "shredding",
+]
+
+[package]
+name = "shockwave"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core = { path = "./core" }
+networking = { path = "./networking" }
+ripple = { path = "./ripple" }
+crds = { path = "./crds" }
+fec = { path = "./fec" }
+shredding = { path = "./shredding" }
+serde = { version = "1.0.209", features = ["derive"] }
+
+# Common dependencies for all crates
+[workspace.dependencies]
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+log = "0.4"
+
+# Individual crate definitions
+
+[workspace.package.core]
+name = "core"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.package.networking]
+name = "networking"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.package.ripple]
+name = "ripple"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.package.crds]
+name = "crds"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.package.fec]
+name = "fec"
+version = "0.1.0"
+edition = "2021"
+
+[workspace.package.shredding]
+name = "shredding"
+version = "0.1.0"
+edition = "2021"

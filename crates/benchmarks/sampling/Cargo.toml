@@ -1,0 +1,65 @@
+[package]
+name = "sampler"
+version = { workspace = true }
+edition = { workspace = true }
+resolver = "2"
+authors = { workspace = true }
+license = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sov-modules-api = { workspace = true, features = ["native"] }
+sov-cli = { workspace = true }
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "macros"] }
+sha2 = { workspace = true }
+cron = "0.12.1"
+chrono = "0.4.38"
+fastping-rs = "0.2"
+dns-lookup = "2.0.4"
+futures = "0.3.31"
+spicenet-stf = {path = "../../stf", features = ["native"] }
+sov-bank = { workspace = true }
+borsh = { workspace = true }
+# sov-ledger-json-client = {workspace = true}
+# sov-sequencer-json-client = {workspace = true}
+sov-mock-da = { workspace = true, features = ["native"], optional = true }
+sov-mock-zkvm = { workspace = true, features = ["native"] }
+sov-rollup-interface = {workspace = true}
+serde = { workspace = true }
+sov-nonces = {workspace = true, features = ["native"]}
+jsonrpsee = {workspace = true, features = ["jsonrpsee-ws-client"]}
+
+# binary dependencies
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+bytes = "1.5.0"
+rand = "0.8.5"
+diesel = { version = "2.2.0", features = [
+    "postgres",
+    "chrono",
+    "numeric"
+] }
+num-bigint = "0.4.6"
+diesel-derive-enum = { version = "2.1.0", features = [
+    "postgres",
+] }
+bigdecimal = "0.4.5"
+lazy_static = "1.5.0"
+anyhow = "1.0.86"
+base64 = "0.21.7"
+tracing = "0.1.40"
+reqwest = "0.11.27"
+
+[dev-dependencies]
+tempfile = { workspace = true }
+sov-mock-zkvm = { workspace = true, features = ["native"] }
+sov-test-utils = { workspace = true }
+futures = { version = "0.3", default-features = false }
+
+[features]
+default = ["mock_da"] # set mock_da as the default feature
+mock_da = ["sov-mock-da"]
+
+[[bin]]
+name = "sampler"
+path = "src/lib.rs"

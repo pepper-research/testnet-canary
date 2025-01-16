@@ -1,0 +1,14 @@
+syntax = "proto3";
+package oracle;
+
+service OracleAggregator {
+  rpc SendData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  repeated uint64 data = 1;
+}
+
+message DataResponse {
+  bool success = 1;
+}

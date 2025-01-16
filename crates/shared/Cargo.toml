@@ -1,0 +1,71 @@
+[package]
+name = "spicenet-shared"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# sovereign sdk
+# none for now
+
+sov-modules-macros = { workspace = true }
+sov-modules-api = { workspace = true }
+borsh = { workspace = true }
+bytemuck = { version = "1.18.0", features = ["derive"] }
+serde = { workspace = true , features = ["derive"] }
+thiserror = { workspace = true }
+num-derive = "0.3"
+num-traits = "0.2.14"
+anyhow = { workspace = true }
+serde_arrays = { workspace = true, optional = true}
+serde-big-array = "0.5.1"
+
+
+diesel = { version = "2.2.0", features = [
+    "postgres",
+    "chrono",
+    "sqlite"
+], optional = true }
+diesel-derive-enum = { version = "2.1.0", features = [
+    "postgres",
+], optional = true}
+dotenvy = { version = "0.15", optional = true }
+chrono = { version = "0.4.38", optional = true }
+rand = "0.8.5"
+schemars = { workspace = true, features = ["derive", "arrayvec07"] }
+ed25519-dalek = { version = "2.1.1", optional = true, default-features = false }
+alloy-primitives = { version = "0.8.9", optional = true, default-features = false, features = ["rlp", "k256"] }
+
+[dev-dependencies]
+spicenet-shared = { version = "*", features = [
+    "native",
+    "offchain",
+], path = "." }
+base58 = "0.2.0"
+fixed = "1.28.0"
+itertools = "0.10.3"
+
+[lints]
+workspace = true
+
+[lib]
+test = true
+
+[features]
+default = []
+native = [
+    "serde_arrays"
+]
+offchain = [
+    "diesel",
+    "diesel-derive-enum",
+    "dotenvy",
+    "chrono",
+    "spicenet-shared/offchain",
+]
+crypto = ["alloy-primitives", "ed25519-dalek"]

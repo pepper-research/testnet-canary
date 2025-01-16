@@ -1,0 +1,22 @@
+[package]
+name = "networking"
+version = "0.1.0"
+edition = "2021"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1.0.63"
+tokio = { version = "1.40.0", features = ["net"] }
+bincode = { version = "1.3.3" }
+ripple = { path = "../ripple" }
+serde = { version = "1.0.210" }
+
+[dev-dependencies]
+tokio = { version = "1.40.0", features = ["full"] }
+networking = { path = "." }
+lazy_static = "1.5.0"
+
+[lib]
+test = true

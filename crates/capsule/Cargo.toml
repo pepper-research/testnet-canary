@@ -1,0 +1,62 @@
+[package]
+name = "capsule"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sov-modules-api = { workspace = true }
+sov-state = { workspace = true }
+sov-accounts = { workspace = true }
+sov-modules-macros = { workspace = true }
+ahash = "0.8.11"
+bytemuck = { version = "1.18.0", features = ["derive"] }
+serde = { workspace = true }
+serde_json = { workspace = true, optional = true }
+anyhow = { workspace = true }
+borsh = { workspace = true, features = ["rc"] }
+thiserror = { workspace = true }
+schemars = { workspace = true, optional = true }
+jsonrpsee = { workspace = true, features = [
+    "macros",
+    "client-core",
+    "server",
+], optional = true }
+ed25519-dalek = "2.1.1"
+bs58 = "0.5.1"
+rand = "0.8.5"
+# num-derive = "0.4.2"
+# num-traits = "0.2.19"
+# solana-sdk = { git = "ssh://git@github.com/anza-xyz/agave.git", rev = "9c2098450ca7e5271e3690277992fbc910be27d0", features = [
+#     "borsh",
+#     "serde_json",
+# ] }
+# spicenet-dex = { path = "../dex" }
+spicenet-shared = { path = "../shared", features = ["crypto"] }
+hex = "0.4.3"
+sov-rollup-interface = { workspace = true }
+
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+hexdump = "0.1.0"
+capsule = { version = "*", features = ["native"], path = "../capsule" }
+sov-rollup-interface = { workspace = true }
+
+
+[features]
+default = []
+native = [
+    "jsonrpsee",
+    "schemars",
+    "capsule/native",
+    "sov-modules-api/native",
+    "sov-rollup-interface/native",
+    "sov-state/native",
+]
+test = ["native"]

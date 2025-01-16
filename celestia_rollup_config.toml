@@ -1,0 +1,36 @@
+[da]
+celestia_rpc_auth_token = ""
+celestia_rpc_address = "http://127.0.0.1:26658"
+max_celestia_response_body_size = 104_857_600
+celestia_rpc_timeout_seconds = 60
+
+[storage]
+path = "../../rollup-starter-data"
+
+# We define the rollup's genesis to occur at block number `start_height`. The rollup will ignore
+# any blocks before this height
+[runner]
+genesis_height = 4040000
+da_polling_interval_ms = 12000
+
+
+[monitoring]
+telegraf_address = "127.0.0.1:8094"
+
+[runner.rpc_config]
+bind_host = "127.0.0.1"
+bind_port = 12345
+[runner.axum_config]
+bind_host = "127.0.0.1"
+bind_port = 12346
+
+[proof_manager]
+aggregated_proof_block_jump = 1
+prover_address = "sov1l6n2cku82yfqld30lanm2nfw43n2auc8clw7r5u5m6s7p8jrm4zqrr8r94"
+max_number_of_transitions_in_db = 100
+max_number_of_transitions_in_memory = 20
+
+[sequencer]
+max_allowed_blocks_behind = 5
+da_address = "celestia1a68m2l85zn5xh0l07clk4rfvnezhywc53g8x7s"
+[sequencer.standard]

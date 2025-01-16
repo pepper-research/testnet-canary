@@ -1,0 +1,52 @@
+[package]
+name = "spammer"
+version = { workspace = true }
+edition = { workspace = true }
+resolver = "2"
+authors = { workspace = true }
+license = { workspace = true }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "macros"] }
+sysinfo = "0.32.0"
+cron = "0.12.1"
+chrono = "0.4.38"
+
+# binary dependencies
+bytes = "1.5.0"
+rand = "0.8.5"
+diesel = { version = "2.2.0", features = ["sqlite", "returning_clauses_for_sqlite_3_35", "chrono"] }
+num-bigint = "0.4.6"
+diesel-derive-enum = { version = "2.1.0", features = [
+    "sqlite"
+] }
+bigdecimal = "0.4.5"
+lazy_static = "1.5.0"
+anyhow = "1.0.86"
+base64 = "0.21.7"
+tracing = "0.1.40"
+reqwest = { version = "0.11.27", features = ["json"] }
+clap = { version = "4.5.20", features = ["derive"] }
+# sov-ledger-json-client = {workspace = true}
+# sov-sequencer-json-client = {workspace = true}
+sov-mock-da = { workspace = true, features = ["native"]}
+sov-mock-zkvm = { workspace = true, features = ["native"] }
+sov-modules-api = { workspace = true, features = ["native"] }
+borsh = { workspace = true }
+sov-cli = { workspace = true }
+jsonrpsee = {workspace = true, features = ["jsonrpsee-ws-client"]}
+futures = "0.3.31"
+spicenet-stf = {path = "../../stf", features = ["native"] }
+sov-bank = { workspace = true }
+sov-nonces = {workspace = true, features = ["native"]}
+serde = { version = "1.0.210", features = ["derive"] }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+futures = { version = "0.3", default-features = false }
+
+[[bin]]
+name = "spammer"
+path = "src/lib.rs"

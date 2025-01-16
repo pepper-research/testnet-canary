@@ -1,0 +1,50 @@
+[package]
+name = "spicenet-time"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+publish.workspace = true
+rust-version.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# sovereign sdk
+sov-modules-api = { workspace = true, features = ["native"] }
+sov-state = { workspace = true }
+sov-accounts = { workspace = true }
+sov-modules-macros = { workspace = true }
+ahash = "0.8.11"
+bytemuck = { version = "1.18.0", features = ["derive"] }
+serde = { workspace = true }
+serde_json = { workspace = true, optional = true }
+anyhow = { workspace = true }
+borsh = { workspace = true, features = ["rc"] }
+thiserror = { workspace = true }
+schemars = { workspace = true, optional = true }
+jsonrpsee = { workspace = true, features = ["macros", "client-core", "server"] }
+tracing = "0.1.41"
+
+[dev-dependencies]
+hexdump = "0.1.0"
+spicenet-time = { version = "*", features = ["native"], path = "." }
+sov-rollup-interface = { workspace = true }
+sov-test-utils = { workspace = true }
+tempfile = { workspace = true }
+
+[features]
+default = []
+native = [
+    "schemars",
+    "spicenet-time/native",
+    "sov-modules-api/native",
+    "sov-rollup-interface/native",
+    "sov-state/native",
+]
+test = ["native"]
+
+
+[lints]
+workspace = true
