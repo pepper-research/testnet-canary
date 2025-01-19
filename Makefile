@@ -1,5 +1,5 @@
 PROJECT_ROOT := $(shell git rev-parse --show-toplevel)
-SOV_CLI_REL_PATH := $(PROJECT_ROOT)/target/debug/starter-cli-wallet
+SOV_CLI_REL_PATH := $(PROJECT_ROOT)/target/debug/cli-wallet
 SPICENET_NODE_REL_PATH := $(PROJECT_ROOT)/target/debug/node
 
 CELESTIA_CONFIG := $(PROJECT_ROOT)/celestia_rollup_config.toml
@@ -58,7 +58,7 @@ clean-db:
 	rm -rf demo_data
 
 build-sov-cli:
-	cargo build --bin starter-cli-wallet
+	cargo build --bin cli-wallet
 
 build-node:
 	cd crates/rollup; \

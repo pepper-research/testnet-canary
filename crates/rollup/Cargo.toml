@@ -83,5 +83,5 @@ name = "node"
 path = "src/bin/node.rs"
 
 [[bin]]
-name = "starter-cli-wallet"
-path = "src/bin/starter_cli_wallet.rs"
+name = "cli-wallet"
+path = "src/bin/cli_wallet.rs"

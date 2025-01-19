@@ -1,0 +1,127 @@
+name: Build and Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+
+    runs-on: ${{ matrix.os }}
+
+    permissions:
+      contents: write
+
+    env:
+      MATRIX_OS: ${{ matrix.os }}
+      CARGO_NET_GIT_FETCH_WITH_CLI: true
+      RUST_MIN_STACK: 8388608
+      SKIP_GUEST_BUILD: 1
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set github url and credentials
+        run: |
+          git config --global --add url."https://${{ secrets.ACCESS_TOKEN }}:x-oauth-basic@github".insteadOf ssh://git@github
+          git config --global --add url."https://${{ secrets.ACCESS_TOKEN }}:x-oauth-basic@github".insteadOf https://github
+          git config --global --add url."https://${{ secrets.ACCESS_TOKEN }}:x-oauth-basic@github".insteadOf git@github
+      - name: Install clang
+        run: | 
+          if [[ "${RUNNER_OS}" == "macOS" ]]; then
+            brew install llvm
+            brew install openssl
+            brew install pkg-config
+            brew install libiconv
+            brew install libpq && brew link --force libpq
+            export PATH="/usr/local/opt/libpq/bin:$PATH"
+            export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib:$(brew --prefix)/opt/libiconv/lib
+          fi
+          if [[ "${RUNNER_OS}" == "windows-latest" ]]; then
+            choco install llvm
+            choco install openssl
+            choco install pkg-config
+          fi
+          if [[ "${RUNNER_OS}" == "buildjet-16vcpu-ubuntu-2004" ]]; then
+            sudo apt update
+            sudo apt install -y pkg-config libssl-dev clang
+          fi
+      - name: Install Latest Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          default: true
+          override: true
+
+      - name: Build-Node
+        id: build-node
+        shell: bash
+        run: |
+          cd crates/rollup
+
+          cargo build --bin node --release
+
+          binary_extension=""
+
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            binary_path="spicenet-ubuntu-latest"
+          fi
+          if [[ "${RUNNER_OS}" == "Windows" ]]; then
+            binary_extension=".exe"
+            binary_path="spicenet-windows-latest${binary_extension}"
+          fi
+          if [[ "${RUNNER_OS}" == "macOS" ]]; then
+            if [[ "${MATRIX_OS}" == "macos-latest" ]]; then
+              binary_path="spicenet-macos-m1-latest"
+            else
+              binary_path="spicenet-macos-intel-latest"
+            fi
+          fi
+          cd ../..
+          mv "target/release/node${binary_extension}" "${binary_path}"
+          echo "::set-output name=binary_path::${binary_path}"
+          strip "${binary_path}"
+    
+      - name: Build cli-wallet
+        id: build-cli-wallet
+        shell: bash
+        run: |
+          cd crates/rollup
+
+          cargo build --bin cli-wallet --release
+
+          binary_extension=""
+
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            binary_path="cli-wallet-ubuntu-latest"
+          fi
+          if [[ "${RUNNER_OS}" == "Windows" ]]; then
+            binary_extension=".exe"
+            binary_path="cli-wallet-windows-latest${binary_extension}"
+          fi
+          if [[ "${RUNNER_OS}" == "macOS" ]]; then
+            if [[ "${MATRIX_OS}" == "macos-latest" ]]; then
+              binary_path="cli-wallet-macos-m1-latest"
+            else
+              binary_path="cli-wallet-macos-intel-latest"
+            fi
+          fi
+          cd ../..
+          mv "target/release/cli-wallet${binary_extension}" "${binary_path}"
+          echo "::set-output name=binary_path::${binary_path}"
+          strip "${binary_path}"
+
+      - name: Release Tags
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ${{ steps.build-node.outputs.binary_path }}
+            ${{ steps.build-cli-wallet.outputs.binary_path }}
