@@ -1,5 +1,5 @@
 PROJECT_ROOT := $(shell git rev-parse --show-toplevel)
-SOV_CLI_REL_PATH := $(PROJECT_ROOT)/target/debug/cli-wallet
+SOV_CLI_REL_PATH := $(PROJECT_ROOT)/target/debug/starter-cli-wallet
 SPICENET_NODE_REL_PATH := $(PROJECT_ROOT)/target/debug/node
 
 CELESTIA_CONFIG := $(PROJECT_ROOT)/celestia_rollup_config.toml
@@ -58,13 +58,14 @@ clean-db:
 	rm -rf demo_data
 
 build-sov-cli:
-	cargo build --bin cli-wallet
+	cd crates/rollup; \
+	cargo build --bin starter-cli-wallet
 
 build-node:
 	cd crates/rollup; \
 	cargo build --bin node
 
-run-node: celestia-bridge-auth build-node
+run-node: build-node
 	$(SPICENET_NODE_REL_PATH) --da-layer celestia --rollup-config-path ./celestia_rollup_config.toml --genesis-config-dir ./test-data/genesis/celestia
 
 run-node-mock: build-node
@@ -73,8 +74,8 @@ run-node-mock: build-node
 test-create-token: build-sov-cli
 	$(SOV_CLI_REL_PATH) transactions clean
 	$(SOV_CLI_REL_PATH) node set-url http://127.0.0.1:12346
-	$(SOV_CLI_REL_PATH) keys import --skip-if-present --nickname DANGER__DO_NOT_USE_WITH_REAL_MONEY --path ../../test-data/keys/token_deployer_private_key.json
-	$(SOV_CLI_REL_PATH) transactions import from-file bank --chain-id 4321 --max-fee 100000000 --path ../../test-data/requests/transfer.json
+	$(SOV_CLI_REL_PATH) keys import --skip-if-present --nickname DANGER__DO_NOT_USE_WITH_REAL_MONEY --path ./test-data/keys/token_deployer_private_key.json
+	$(SOV_CLI_REL_PATH) transactions import from-file bank --chain-id 4321 --max-fee 100000000 --path ./test-data/requests/transfer.json
 	@echo "Submitting a batch"
 	$(SOV_CLI_REL_PATH) transactions list
 	$(SOV_CLI_REL_PATH) node submit-batch --wait-for-processing by-nickname DANGER__DO_NOT_USE_WITH_REAL_MONEY

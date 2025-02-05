@@ -5,13 +5,13 @@ max_celestia_response_body_size = 104_857_600
 celestia_rpc_timeout_seconds = 60
 
 [storage]
-path = "../../rollup-starter-data"
+path = "./rollup-starter-data"
 
 # We define the rollup's genesis to occur at block number `start_height`. The rollup will ignore
 # any blocks before this height
 [runner]
-genesis_height = 4040000
-da_polling_interval_ms = 12000
+genesis_height = 4541000
+da_polling_interval_ms = 6000
 
 
 [monitoring]
@@ -32,5 +32,7 @@ max_number_of_transitions_in_memory = 20
 
 [sequencer]
 max_allowed_blocks_behind = 5
-da_address = "celestia1a68m2l85zn5xh0l07clk4rfvnezhywc53g8x7s"
+da_address = "celestia1xetdm9tl7c08vatjnujnql2xtm8h34v7hhvgm3"
 [sequencer.standard]
+
+# celestia1a68m2l85zn5xh0l07clk4rfvnezhywc53g8x7s
